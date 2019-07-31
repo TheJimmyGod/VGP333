@@ -1,0 +1,7 @@
+{
+  "MaxHealth": 100,
+  "NumLives": 3,
+  "RunSpeed": 8.5,
+  "Class": "Warrior",
+  "Name": "Bob"
+}
