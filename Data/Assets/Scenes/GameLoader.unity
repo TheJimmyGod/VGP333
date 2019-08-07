@@ -132,7 +132,7 @@ GameObject:
   - component: {fileID: 477622311}
   - component: {fileID: 477622313}
   m_Layer: 0
-  m_Name: GameObject
+  m_Name: GameLoader
   m_TagString: Services
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -151,6 +151,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   sceneIndexToload: 1
+  UIManagerPrefab: {fileID: 2591134909001958939, guid: 3ff564037ad58f5439ea3f58775347f9,
+    type: 3}
   gameModules:
   - {fileID: 477622313}
 --- !u!4 &477622312

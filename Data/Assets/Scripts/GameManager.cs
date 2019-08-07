@@ -6,66 +6,54 @@ using UnityEngine.UI;
 
 public class GameManager : MonoBehaviour
 {
-    public Text mScore;
-    public Text mGenerate;
-    public Text mWinAndLose;
-    public Slider HPbar;
-    public Player mPlayer;
-    public GameObject door;
+    private UIManager _uiManager = null;
     public int mGenerateCount = 0;
-
-    private void Awake()
+    private int _currentScore;
+    private int _sceneIndexToLoad = 0;
+    public int CurrentScore { get { return _currentScore; } set { _currentScore = value; } }
+    public GameManager Initialize(int index)
     {
-        mScore.text = "Count : " + mPlayer.mCount.ToString();
-        mGenerate.text = "Generate(%) : " + mGenerateCount.ToString();
-        mWinAndLose.text = "";
-        HPbar.value = mPlayer._currentHealth;
-        Debug.Log("Hello!");
+        _uiManager = ServiceLocator.Get<UIManager>();
+        SetSceneIndex(index);
+        return this;
     }
 
     void FixedUpdate()
     {
         CheckPlayerWin();
         CheckPlayerLose();
-        CheckCountText();
-        if (mPlayer.isActive)
-        {
-            if (mGenerateCount < 100)
-            {
-                mGenerateCount++;
-            }
-            else if (mGenerateCount == 100)
-            {
-                Destroy(door);
-            }
-        }
-        HPbar.value = mPlayer._currentHealth;
+    }
+
+    public void SetSceneIndex(int index)
+    {
+        _sceneIndexToLoad = index;
+    }
+
+    public void UpdateScore(int delta)
+    {
+        _currentScore += delta;
+        _uiManager.UpdateObjectCount(_currentScore);
     }
 
     void CheckPlayerWin()
     {
-        if(mPlayer.mCount == 10)
+        //int requiredTowin;
+        if(CurrentScore > 100)
         {
-            mWinAndLose.text = "You win!";
-            SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex + 1);
+            _uiManager.SetWinText();
+            //SetSceneIndex(SceneManager.GetActiveScene().buildIndex + 1);
+            //SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex + 1);
         }
     }
     void CheckPlayerLose()
     {
-        if(mPlayer.pos.y < -4.0f)
-        {
-            Destroy(mPlayer);
-        }
-        if(mPlayer == null)
-        {
-            mWinAndLose.text = "You lose!";
-        }
-    }
-
-    void CheckCountText()
-    {
-        mScore.text = "Count : " + mPlayer.mCount.ToString();
-        mGenerate.text = "Generate(%) : " + mGenerateCount.ToString();
-
+        //if(mPlayer.pos.y < -4.0f)
+        //{
+        //    Destroy(mPlayer);
+        //}
+        //if(mPlayer == null)
+        //{
+        //    _uiManager.winloseText.text = "You win!";
+        //}
     }
 }

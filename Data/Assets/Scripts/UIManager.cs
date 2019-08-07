@@ -1,10 +1,16 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-
+using UnityEngine.UI;
 public class UIManager : MonoBehaviour
 {
-    public Canvas canvas;
+    // Need hud;
+    private Canvas canvas;
+    public Text winloseText;
+    private Text objCount;
+    private Slider HPBar;
+
+    private const string WIN_MESSAGE = "You Win!!";
 
     private void Awake()
     {
@@ -12,13 +18,20 @@ public class UIManager : MonoBehaviour
         Init();
     }
 
-    private void Init()
+    public UIManager Init()
     {
-
+        winloseText.text = "";
+        //objCount.text = "";
+        return this;
     }
 
-    public void PrintSpeed(float speed)
+    public void SetWinText()
     {
-        Debug.Log("Player Speed: " + speed);
+        winloseText.text = WIN_MESSAGE;
+    }
+
+    public void UpdateObjectCount(int count)
+    {
+        objCount.text = count.ToString();
     }
 }
