@@ -4,11 +4,13 @@ using UnityEngine;
 using UnityEngine.AI;
 
 [RequireComponent(typeof(NavMeshAgent))]
-public class EnemyNPC : MonoBehaviour
+public class EnemyNPC : MonoBehaviour, IDamageable
 {
-    public float attackRange = 3.0f;
+    public float attackRange = 10.0f;
     public Transform target;
     public GameObject player;
+    public float _currentHP = 30.0f;
+    private UIManager _uiManager;
     private NavMeshAgent _agent;
     private Gun _gun;
     private Vector3 start;
@@ -16,8 +18,20 @@ public class EnemyNPC : MonoBehaviour
     private bool sight;
     private bool IsFind = false;
     private Vector3 minSpeed;
+
+    public void TakeDamage(float damage)
+    {
+        _currentHP -= damage;
+        if (_currentHP <= 0)
+        {
+            _uiManager.UpdatePlayerScore(100);
+            Destroy(this.gameObject);
+        }
+    }
+
     private void Awake()
     {
+        _uiManager = ServiceLocator.Get<UIManager>();
         _agent = GetComponent<NavMeshAgent>();
         // No null check needed because of RequireComponent attribute
         _gun = GetComponentInChildren<Gun>();

@@ -1,7 +1,7 @@
 {
   "MaxHealth": 100,
-  "NumLives": 3,
+  "CurrentHealth": 3,
   "RunSpeed": 8.5,
-  "Class": "Warrior",
+  "JumpForce": 5.0,
   "Name": "Bob"
 }

@@ -1,8 +1,8 @@
 {
   "Damage": 20,
   "Range": 100,
-  "Speed": 8,
-  "Ammo": 8,
-  "MaxAmmo": 40,
+  "Speed": 1000,
+  "Ammo": 40,
+  "MaxAmmo": 400,
   "Name": "MachineGun"
 }

@@ -11,35 +11,42 @@ public class GameLoader : AsyncLoader
     public int sceneIndexToload = 1;
     private static int _sceneIndex = 1;
     private static GameLoader _instance; // The only singleton you should have.
-    //public LoadingScreen loadingScreen = null;
+    private LoadingScreen loadingScreen;
 
     public GameObject UIManagerPrefab = null;
 
     // All of the components that implement the IGamemodule interface
     public List<Component> gameModules = new List<Component>();
 
-    private float _coreLoadTotalSteps = 10.0f;
-    private float _coreLoadCurrentStep = 0.0f;
-    private float _modularLoadTotalSteps = 10.0f;
-    private float _modularLoadCurrentStep = 0.0f;
+    private float _coreLoadTotalSteps = 50.0f;
+    private float _coreLoadCurrentStep = 1.0f;
+    private float _modularLoadTotalSteps = 50.0f;
+    private float _modularLoadCurrentStep = 1.0f;
+
     private float UpdateCoreSystemsProgress()
     {
         return _coreLoadCurrentStep / _coreLoadTotalSteps;
     }
 
+    private float UpdateModularSystemsProgress()
+    {
+        return _modularLoadCurrentStep / _modularLoadTotalSteps;
+    }
+
     protected override void ProgressUpdated(float percentComplete)
     {
         base.ProgressUpdated(percentComplete);
-        //loadingScreen.UpdataLoadingBar(percentComplete);
+        loadingScreen.UpdateLoadingBar(percentComplete);
         Debug.Log("ProgressL " + percentComplete * 100.0f);
     }
 
     protected override void Awake()
     {
-        Debug.Log("GameLoader Starting");
+        loadingScreen = GetComponent<LoadingScreen>();
+        loadingScreen.UpdateLoadingStep("GameLoader Starting");
 
         // Safety Check
-        if(_instance != null && _instance != this)
+        if (_instance != null && _instance != this)
         {
             Debug.Log("A duplicate instance of the GameLoader was found");
             Destroy(gameObject);
@@ -67,11 +74,11 @@ public class GameLoader : AsyncLoader
         Transform systemsParent = systemsGO.transform;
         DontDestroyOnLoad(systemsGO);
 
-        //loadingScreen.UpdateLoadingStep("Loading Game Systems");
+        loadingScreen.UpdateLoadingStep("Loading Game Systems");
 
         // Queue up loading routines
-        Enqueue(InitializeCoreSystems(systemsParent), 50);
-        Enqueue(InitializingModularSystem(systemsParent), 50);
+        Enqueue(InitializeCoreSystems(systemsParent), 50, UpdateCoreSystemsProgress);
+        Enqueue(InitializingModularSystem(systemsParent), 50, UpdateModularSystemsProgress);
         // Set the completion callback
 
         CallonComplete(OnComplete);
@@ -80,8 +87,9 @@ public class GameLoader : AsyncLoader
 
     private IEnumerator InitializingModularSystem(Transform systemsParent)
     {
-        Debug.Log("Loading Modular Systems");
-        foreach(var module in gameModules)
+        loadingScreen.UpdateLoadingStep("Loading Modular Systems");
+        yield return new WaitForSeconds(2.0f);
+        foreach (var module in gameModules)
         {
             if(module is IGameModule)
             {
@@ -92,11 +100,10 @@ public class GameLoader : AsyncLoader
     }
     private IEnumerator InitializeCoreSystems(Transform systemsParent)
     {
-        Debug.Log("Initializing Core System");
+        loadingScreen.UpdateLoadingStep("Initializing Core System");
         yield return new WaitForSeconds(7.0f);
 
         // UI Manager
-        //GameObject uiManagerGO = new GameObject("UIManager");
         GameObject uiManagerGO = GameObject.Instantiate(UIManagerPrefab);
         uiManagerGO.transform.SetParent(systemsParent);
         uiManagerGO.SetActive(false);
@@ -119,20 +126,21 @@ public class GameLoader : AsyncLoader
 
     private void OnComplete()
     {
-        Debug.Log("GameLoader Completed");
-        ServiceLocator.Get<GameManager>().CurrentScore = PlayerPrefs.GetInt("PlayerScore", 0);
+        loadingScreen.UpdateLoadingStep("GameLoader Completed");
+        ServiceLocator.Get<GameManager>()._currentScore = PlayerPrefs.GetInt("PlayerScore", 0);
         StartCoroutine(LoadInitialScene(_sceneIndex));
     }
     
     private IEnumerator LoadInitialScene(int index)
     {
-        Debug.Log("GameLoader Starting Scene Load");
+        loadingScreen.UpdateLoadingStep("GameLoader Starting Scene Load");
+        yield return new WaitForSeconds(2.0f);
         var loadOp = SceneManager.LoadSceneAsync(index);
 
-        //loadingScreen.UpdateLoadingStep("Loading Scene: " + index.ToString());)
+        loadingScreen.UpdateLoadingStep("Loading Scene: " + index.ToString());
         while(!loadOp.isDone)
         {
-            //loadingScreen.UpdateLoadingBar(loadOp.progress);
+            loadingScreen.UpdateLoadingBar(loadOp.progress);
             yield return loadOp;
         }
     }

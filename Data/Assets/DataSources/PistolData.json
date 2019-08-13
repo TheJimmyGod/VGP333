@@ -1,7 +1,7 @@
 {
   "Damage": 20,
   "Range": 100,
-  "Speed": 8,
+  "Speed": 600,
   "Ammo": 8,
   "MaxAmmo": 40,
   "Name": "Pistol"
