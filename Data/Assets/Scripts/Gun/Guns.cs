@@ -50,6 +50,7 @@ public class Guns : MonoBehaviour
     private JsonDataSource _SgunData;
     private JsonDataSource _MgunData;
 
+    public GameObject _gunObject;
     public Transform BulletSpawnPoint;
     public GameObject bulletPrefab;
     private UIManager _uiManager;
@@ -60,6 +61,7 @@ public class Guns : MonoBehaviour
     private Bullets _bullets = null;
     private void Awake()
     {
+        _gunObject = GameObject.FindGameObjectWithTag("PlayerGun");
         _uiManager = ServiceLocator.Get<UIManager>();
         _bullets = gameObject.GetComponent<Bullets>();
         _GundataLoader = ServiceLocator.Get<DataLoader>();
@@ -111,12 +113,14 @@ public class Guns : MonoBehaviour
         }
 
 
+
         if (GunTypeNumber == 0)
         {
             _gunType = GunType.Pistol;
             bulletSpeed = P_Speed;
             _uiManager.UpdateCurrentBulletCount(P_Ammo);
             _uiManager.UpdateTotalBulletCount(P_MaxAmmo);
+            _uiManager.UpdateGunText("Pistol");
 
         }
         else if (GunTypeNumber == 1)
@@ -125,6 +129,7 @@ public class Guns : MonoBehaviour
             bulletSpeed = S_Speed;
             _uiManager.UpdateCurrentBulletCount(S_Ammo);
             _uiManager.UpdateTotalBulletCount(S_MaxAmmo);
+            _uiManager.UpdateGunText("ShotGun");
         }
         else if (GunTypeNumber == 2)
         {
@@ -132,6 +137,7 @@ public class Guns : MonoBehaviour
             bulletSpeed = M_Speed;
             _uiManager.UpdateCurrentBulletCount(M_Ammo);
             _uiManager.UpdateTotalBulletCount(M_MaxAmmo);
+            _uiManager.UpdateGunText("MachineGun");
         }
         else
             GunTypeNumber = 0;
@@ -139,6 +145,7 @@ public class Guns : MonoBehaviour
 
     public void PistolShoot()
     {
+
         if (P_Ammo > 0)
         {
             --P_Ammo;
@@ -168,14 +175,15 @@ public class Guns : MonoBehaviour
         if (S_Ammo > 0)
         {
             --S_Ammo;
-            for (int i = 0; i < 10; i++)
+            float increasement = -50.0f;
+            for (int i = 0; i < 4; i++)
             {
-                float angle = transform.eulerAngles.y;
-                Quaternion rotation = Quaternion.Euler(new Vector3(0, angle + 5, 0));
+                float angle = transform.eulerAngles.y + Random.value;
+                increasement += i * 5;
+                Quaternion rotation = Quaternion.Euler(new Vector3(0, angle + increasement, 0));
                 GameObject bullet = Instantiate(bulletPrefab, BulletSpawnPoint.position, Quaternion.identity) as GameObject;
                 var rb = bullet.GetComponent<Rigidbody>();
                 rb.AddForce(BulletSpawnPoint.up * bulletSpeed, ForceMode.Force);
-                rb.transform.rotation = rotation;
             }
             _uiManager.UpdateCurrentBulletCount(S_Ammo);
             _uiManager.UpdateTotalBulletCount(S_MaxAmmo);

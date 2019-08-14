@@ -12,6 +12,7 @@ public class GameManager : MonoBehaviour
     private int _currentBullet;
     private int _totalBullet;
     private float _currentHP = 100.0f;
+    public int requiredTowin = 0;
     public GameManager Initialize(int index)
     {
         _uiManager = ServiceLocator.Get<UIManager>();
@@ -51,21 +52,33 @@ public class GameManager : MonoBehaviour
         _uiManager.UpdateTotalBulletCount(delta);
     }
 
+    public void UpdateObjectives()
+    {
+        ++requiredTowin;
+        _uiManager.UpdatePlayerObject(requiredTowin);
+    }
+
     void CheckPlayerWin()
     {
-        //int requiredTowin;
-        if(_currentScore > 100)
+
+        if (SceneManager.GetActiveScene().buildIndex < 2 && requiredTowin == 3)
+        {
+            requiredTowin = 0;
+            _uiManager.UpdatePlayerObject(0);
+            SetSceneIndex(SceneManager.GetActiveScene().buildIndex + 1);
+            SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex + 1);
+        }
+        if(SceneManager.GetActiveScene().buildIndex == 2 && requiredTowin == 3)
         {
             _uiManager.SetWinText();
-            //SetSceneIndex(SceneManager.GetActiveScene().buildIndex + 1);
-            //SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex + 1);
         }
     }
     void CheckPlayerLose()
     {
-        if (_currentHP <= 0)
+        
+        if (ServiceLocator.Get<Player>().CurrentHealth <= 0)
         {
-            _uiManager.winloseText.text = "You lose!";
+            ServiceLocator.Get<UIManager>().winloseText.text = "You lose!";
         }
     }
 }

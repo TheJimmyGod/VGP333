@@ -7,7 +7,7 @@ using UnityEngine.SceneManagement;
 public class Player : MonoBehaviour, IDamageable
 {
     public string DataSourceId = "PlayerData";
-
+    public Vector3 movement;
     public Vector3 jump;
     public Vector3 pos;
     public int mCount = 0;
@@ -16,10 +16,8 @@ public class Player : MonoBehaviour, IDamageable
     public bool _isDying = false;
 
     private UIManager _uiManager;
-    private Rigidbody rb;
     private Guns _guns = null;
-    private int jumpcount = 0;
-
+    
     private DataLoader _dataLoader;
     private JsonDataSource _playerData;
 
@@ -32,7 +30,8 @@ public class Player : MonoBehaviour, IDamageable
 
     private void Awake()
     {
-        rb = GetComponent<Rigidbody>();
+        ServiceLocator.Register<Player>(this);
+        ServiceLocator.Get<GameManager>().requiredTowin = 0;
         jump = new Vector3(0.0f, 2.0f, 0.0f);
 
         _uiManager = ServiceLocator.Get<UIManager>();
@@ -53,21 +52,9 @@ public class Player : MonoBehaviour, IDamageable
 
     // FixedUpdate is usually using for physics on the objects.
     // MonoBehaviour manages void Start(), void Update(), and private void Awake()
-    void FixedUpdate()
+    void Update()
     {
-        float mHorizontal = Input.GetAxis("Horizontal");
-        float mVertical = Input.GetAxis("Vertical");
-        Vector3 movement = new Vector3(mHorizontal, 0.0f, mVertical);
-        
-        rb.AddForce(movement * RunSpeed);
-
         pos = this.transform.position;
-        if(Input.GetKeyDown(KeyCode.Space) && isGrounded && jumpcount != 1)
-        {
-            rb.AddForce(jump * JumpForce, ForceMode.Impulse);
-            jumpcount++;
-
-        }
 
         if(Input.GetKeyDown(KeyCode.R)) // Reload
         {
@@ -80,10 +67,11 @@ public class Player : MonoBehaviour, IDamageable
                 _guns.PistolShoot();
             else if (_guns.GunTypeNumber == 1)
                 _guns.ShotGunShoot();
-        }
+            else if (_guns.GunTypeNumber == 2)
+                _guns.MachineGunShoot();
 
-        if(Input.GetKeyDown(KeyCode.Mouse0) && _guns.GunTypeNumber == 2) // Shoot
-            _guns.MachineGunShoot();
+
+        }
 
         _uiManager.UpdatePlayerHP(CurrentHealth);
 
@@ -97,36 +85,17 @@ public class Player : MonoBehaviour, IDamageable
     void OnCollisionStay()
     {
         isGrounded = true;
-        jumpcount = 0;
     }
 
     void OnCollisionExit()
     {
         isGrounded = false;
     }
-
-    private void OnTriggerEnter(Collider other)
+    public void GetAmmosByItem()
     {
-        if(other.gameObject.CompareTag("Item"))
-        {
-            other.gameObject.SetActive(false);
-            _guns.M_MaxAmmo += 100;
-            _guns.S_MaxAmmo += 15;
-            _guns.P_MaxAmmo += 40;
-        }
-        if(other.gameObject.CompareTag("Objective"))
-        {
-            other.gameObject.SetActive(false);
-            mCount++;
-            if (mCount == 3)
-            {
-                Debug.Log("Excellent!");
-            }
-            else
-            {
-                Debug.Log("Get");
-            }
-        }
+        _guns.M_MaxAmmo += 100;
+        _guns.S_MaxAmmo += 15;
+        _guns.P_MaxAmmo += 40;
     }
 
     public void TakeDamage(float damage)

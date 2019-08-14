@@ -22,6 +22,7 @@ public class LevelManager : MonoBehaviour
 
     private void Awake()
     {
+        ServiceLocator.Register<LevelManager>(this);
         ServiceLocator.Get<UIManager>().gameObject.SetActive(true);
     }
 }

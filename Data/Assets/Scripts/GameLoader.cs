@@ -14,6 +14,7 @@ public class GameLoader : AsyncLoader
     private LoadingScreen loadingScreen;
 
     public GameObject UIManagerPrefab = null;
+    public GameObject Player = null;
 
     // All of the components that implement the IGamemodule interface
     public List<Component> gameModules = new List<Component>();
@@ -87,7 +88,7 @@ public class GameLoader : AsyncLoader
 
     private IEnumerator InitializingModularSystem(Transform systemsParent)
     {
-        loadingScreen.UpdateLoadingStep("Loading Modular Systems");
+        Debug.Log("Loading Modular Systems");
         yield return new WaitForSeconds(2.0f);
         foreach (var module in gameModules)
         {
@@ -100,7 +101,7 @@ public class GameLoader : AsyncLoader
     }
     private IEnumerator InitializeCoreSystems(Transform systemsParent)
     {
-        loadingScreen.UpdateLoadingStep("Initializing Core System");
+        Debug.Log("Initializing Core System");
         yield return new WaitForSeconds(7.0f);
 
         // UI Manager
@@ -134,7 +135,6 @@ public class GameLoader : AsyncLoader
     private IEnumerator LoadInitialScene(int index)
     {
         loadingScreen.UpdateLoadingStep("GameLoader Starting Scene Load");
-        yield return new WaitForSeconds(2.0f);
         var loadOp = SceneManager.LoadSceneAsync(index);
 
         loadingScreen.UpdateLoadingStep("Loading Scene: " + index.ToString());

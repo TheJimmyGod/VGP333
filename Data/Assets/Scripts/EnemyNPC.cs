@@ -6,7 +6,7 @@ using UnityEngine.AI;
 [RequireComponent(typeof(NavMeshAgent))]
 public class EnemyNPC : MonoBehaviour, IDamageable
 {
-    public float attackRange = 10.0f;
+    public float attackRange = 5.0f;
     public Transform target;
     public GameObject player;
     public float _currentHP = 30.0f;
@@ -24,7 +24,7 @@ public class EnemyNPC : MonoBehaviour, IDamageable
         _currentHP -= damage;
         if (_currentHP <= 0)
         {
-            _uiManager.UpdatePlayerScore(100);
+            ServiceLocator.Get<UIManager>().UpdatePlayerScore(100);
             Destroy(this.gameObject);
         }
     }

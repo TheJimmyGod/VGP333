@@ -27,7 +27,7 @@ public class Bullets : MonoBehaviour
     private void OnCollisionEnter(Collision collision)
     {
         var damageable = collision.gameObject.GetComponent<IDamageable>();
-        if (damageable != null && gameObject.CompareTag("Enemy"))
+        if (damageable != null)
         {
             damageable.TakeDamage(bulletDamage);
             Destroy(this);

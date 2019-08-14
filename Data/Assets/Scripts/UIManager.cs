@@ -10,14 +10,17 @@ public class UIManager : MonoBehaviour
     public Text _currentBullet;
     public Text _totalBullet;
     public Text _score;
+    public Text _nameofGun;
+    public Text _requiredObj;
     public Slider HPBar;
+    public int _requiredObjValue;
     public float _currentHP;
+    private int _scoreValue;
     private const string WIN_MESSAGE = "You Win!!";
 
     private void Awake()
     {
         Debug.Log("UI Manager Initializing");
-       
         Init();
     }
 
@@ -29,6 +32,9 @@ public class UIManager : MonoBehaviour
         _score.text = "";
         HPBar.value = 100.0f;
         _currentHP = 100.0f;
+        _requiredObj.text = "";
+        _nameofGun.text = "";
+        _scoreValue = 0;
         return this;
     }
 
@@ -46,10 +52,22 @@ public class UIManager : MonoBehaviour
     {
         _totalBullet.text = count.ToString();
     }
+
+    public void UpdateGunText(string text)
+    {
+        _nameofGun.text = text;
+    }
     
     public void UpdatePlayerScore(int score)
     {
-        _score.text = score.ToString();
+        _scoreValue += score;
+        _score.text = _scoreValue.ToString();
+    }
+
+    public void UpdatePlayerObject(int obj)
+    {
+        _requiredObj.text = obj.ToString();
+        _requiredObjValue = obj;
     }
 
     public void UpdatePlayerHP(float _current)

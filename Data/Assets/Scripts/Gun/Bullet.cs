@@ -7,7 +7,11 @@ public class Bullet : MonoBehaviour
     public float bulletDamage = 10.0f;
     private void OnCollisionEnter(Collision collision)
     {
-        var damageable = collision.gameObject.GetComponent<IDamageable>();
+        if (collision.gameObject.CompareTag("Player"))
+        {
+            Debug.Log("Player Was Shot");   
+        }
+        var damageable = collision.gameObject.GetComponentInChildren<IDamageable>();
         if(damageable!=null)
         {
             damageable.TakeDamage(bulletDamage);
