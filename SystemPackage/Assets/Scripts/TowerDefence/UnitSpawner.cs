@@ -4,6 +4,7 @@ using System.Collections.Generic;
 using UnityEngine;
 
 public class UnitSpawner : MonoBehaviour
+
 {
     public GameObject UnitPrefeb;
     public int numberOfWaves;
@@ -15,22 +16,30 @@ public class UnitSpawner : MonoBehaviour
     private int _currentWave = 0;
     private List<GameObject> _activeEnemies = new List<GameObject>();
     private WayPointManager.Path _path;
+    private Action OnDeath;     // TODO - Add an OnDeath action
 
-    // TODO - Add an OnDeath action
+    public void OnKilled()
+    {
+        _activeEnemies.Remove(gameObject);
+        Destroy(gameObject);
+    }
 
     private void Awake()
     {
-        if(UnitPrefeb == null)
+        OnDeath += OnKilled;
+        if (UnitPrefeb == null)
         {
             Debug.LogError("UnitSpawner disabled: Unit Prefab is NULL");
             gameObject.SetActive(false);
             return;
         }
+        OnDestroy();
     }
 
     public void Init(WayPointManager.Path path, System.Action onEnemnyKilled = null)
     {
         _path = path;
+        OnDeath += onEnemnyKilled;
         // TODO - assign on killed action
     }
 
@@ -55,8 +64,13 @@ public class UnitSpawner : MonoBehaviour
         {
             GameObject enemy = GameObject.Instantiate(UnitPrefeb, transform.position, transform.rotation);
             enemy.SetActive(true);
-            enemy.GetComponent<Enemy>().Initialize(_path); // TODO - pass the on killed action
+            enemy.GetComponent<Enemy>().Initialize(_path, OnDeath); // TODO - pass the on killed action
             _activeEnemies.Add(enemy);
         }
+    }
+
+    private void OnDestroy()
+    {
+        OnDeath -= OnKilled;
     }
 }
