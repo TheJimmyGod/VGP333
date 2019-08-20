@@ -12,20 +12,29 @@ public class UnitSpawner : MonoBehaviour
     public int secondBetweenWave;
     public int secondsStartDelay;
     public int pathId;
-
+    public UIManager _uiManager;
     private int _currentWave = 0;
-    private List<GameObject> _activeEnemies = new List<GameObject>();
+    public List<GameObject> _activeEnemies = new List<GameObject>();
     private WayPointManager.Path _path;
     private Action OnDeath;     // TODO - Add an OnDeath action
 
     public void OnKilled()
     {
-        _activeEnemies.Remove(gameObject);
-        Destroy(gameObject);
+        Debug.Log("Active");
+        for (int i = 0; i < _activeEnemies.Count; ++i)
+        {
+            if(_activeEnemies[i] == null)
+            {
+                _activeEnemies.Remove(_activeEnemies[i]);
+            }
+        }
+
     }
 
     private void Awake()
     {
+        _uiManager = ServiceLocator.Get<UIManager>();
+        _uiManager.UpdateWaves(1);
         OnDeath += OnKilled;
         if (UnitPrefeb == null)
         {
@@ -33,7 +42,6 @@ public class UnitSpawner : MonoBehaviour
             gameObject.SetActive(false);
             return;
         }
-        OnDestroy();
     }
 
     public void Init(WayPointManager.Path path, System.Action onEnemnyKilled = null)
@@ -51,9 +59,10 @@ public class UnitSpawner : MonoBehaviour
     private IEnumerator BeginWaveSpawn()
     {
         yield return new WaitForSeconds(secondsStartDelay);
-        while(_currentWave < numberOfWaves)
+        while (_currentWave < numberOfWaves)
         {
             SpawnWave(_currentWave);
+            _currentWave++;
             yield return new WaitForSeconds(secondBetweenWave);
         }
     }
@@ -69,7 +78,7 @@ public class UnitSpawner : MonoBehaviour
         }
     }
 
-    private void OnDestroy()
+    void OnDestroy()
     {
         OnDeath -= OnKilled;
     }

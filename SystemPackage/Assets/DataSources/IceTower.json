@@ -1,0 +1,8 @@
+{
+  "Damage": 3,
+  "Range": 250,
+  "Speed": 600,
+  "AttackRate" : 0.3,
+  "Cost" : 10,
+  "Name": "IceTower"
+}

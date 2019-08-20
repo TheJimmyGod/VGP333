@@ -262,6 +262,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   sceneIndexToLoad: 1
   loadingScreen: {fileID: 1289506453}
+  UIManagerPrefab: {fileID: 8927176102280537520, guid: b3228e2bd38009943a9a2aa15a90c32d,
+    type: 3}
   gameModules:
   - {fileID: 498627632}
 --- !u!4 &498627631
@@ -290,7 +292,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7303d0062cf8120468284f25c74cb556, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  DataSources: []
+  DataSources:
+  - {fileID: 11400000, guid: 0fec8b89143418e4da1eb5b73ccd5cc6, type: 2}
+  - {fileID: 11400000, guid: cdcafbcae3590534ebc3e50d106cb934, type: 2}
+  - {fileID: 11400000, guid: 8f4ebf7a4102d214fb17545a49558174, type: 2}
+  - {fileID: 11400000, guid: c12de9eef6be6d0469c3fff27b64f784, type: 2}
 --- !u!1 &679767949
 GameObject:
   m_ObjectHideFlags: 0
