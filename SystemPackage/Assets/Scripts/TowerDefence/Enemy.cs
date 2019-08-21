@@ -53,6 +53,13 @@ public class Enemy : MonoBehaviour, IDamageable
                 _currentWaypoint++;
             }
         }
+
+        if(_health <= 0.0f)
+        {
+
+            _Killed?.Invoke();
+            return;
+        }
     }
 
     public void Initialize(WayPointManager.Path path, System.Action Onkilled)

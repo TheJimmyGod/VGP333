@@ -17,7 +17,6 @@ public class UnitSpawner : MonoBehaviour
     public List<GameObject> _activeEnemies = new List<GameObject>();
     private WayPointManager.Path _path;
     private Action OnDeath;     // TODO - Add an OnDeath action
-
     public void OnKilled()
     {
         Debug.Log("Active");
@@ -30,6 +29,7 @@ public class UnitSpawner : MonoBehaviour
         }
 
     }
+
 
     private void Awake()
     {
@@ -78,11 +78,15 @@ public class UnitSpawner : MonoBehaviour
         {
             GameObject enemy = GameObject.Instantiate(UnitPrefeb, transform.position, transform.rotation);
             enemy.SetActive(true);
-            enemy.GetComponent<Enemy>().Initialize(_path, OnDeath); // TODO - pass the on killed action
+            enemy.GetComponent<Enemy>().Initialize(_path, Recycle); // TODO - pass the on killed action
             _activeEnemies.Add(enemy);
         }
     }
 
+    private void Recycle(GameObject obj)
+    {
+        ServiceLocator.Get<ObjectPoolManager>().Recycle(obj);
+    }
     void OnDestroy()
     {
         OnDeath -= OnKilled;
