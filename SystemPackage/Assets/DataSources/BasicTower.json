@@ -1,8 +1,8 @@
 {
   "Damage": 5,
   "Range": 150,
-  "Speed": 800,
-  "AttackRate" : 0.5,
+  "Speed": 1500,
+  "AttackRate" : 1.5,
   "Cost" : 5,
   "Name": "BasicTower"
 }

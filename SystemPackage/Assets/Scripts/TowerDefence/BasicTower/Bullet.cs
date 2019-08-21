@@ -4,16 +4,18 @@ using UnityEngine;
 
 public class Bullet : MonoBehaviour
 {
+    private Tower _towerSet;
     public float bulletDamage = 0.0f;
 
     void Awake()
     {
-        bulletDamage = ServiceLocator.Get<Tower>()._damage;
+        _towerSet = ServiceLocator.Get<Tower>();
+        bulletDamage = _towerSet._damage;
     }
 
     private void OnCollisionEnter(Collision collision)
     {
-        var damageable = collision.gameObject.GetComponentInChildren<IDamageable>();
+        var damageable = collision.gameObject.GetComponent<IDamageable>();
         if(damageable!=null)
         {
             damageable.TakeDamage(bulletDamage);

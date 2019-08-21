@@ -4,6 +4,7 @@ using UnityEngine;
 
 public class Node : MonoBehaviour
 {
+    private UIManager _uiManager;
     private GameObject turret;
     public Color _hoverColor;
     private Color _startColor;
@@ -15,6 +16,7 @@ public class Node : MonoBehaviour
 
     void Awake()
     {
+        _uiManager = ServiceLocator.Get<UIManager>();
         _gameObject = GameObject.FindGameObjectWithTag("Player");
         _player = _gameObject.GetComponent<Player>();
         if (_player == null)
@@ -25,17 +27,42 @@ public class Node : MonoBehaviour
 
     void OnMouseDown()
     {
-        if(turret != null)
+        if (turret != null)
         {
             Debug.Log("Can't build there!");
             return;
         }
-
-        if(_player._Type == Player.Type.Basic)
+        if (_player._money >= 5)
         {
-            GameObject turretToBuild = BuildManager.instance.GetTurretToBuild();
-            turret = (GameObject)Instantiate(turretToBuild, transform.position + _pos, transform.rotation);
+            if (_player._Type == Player.Type.Basic)
+            {
+                GameObject turretToBuild = BuildManager.instance.GetTurretToBuild();
+                turret = (GameObject)Instantiate(turretToBuild, transform.position + _pos, transform.rotation);
+                _player._money -= 5;
+                _uiManager.UpdateMoney(-5);
+            }
         }
+        if (_player._money >= 10)
+        {
+            if (_player._Type == Player.Type.Ice)
+            {
+                GameObject turretToBuild = BuildManager.instance.GetTurretToBuild();
+                turret = (GameObject)Instantiate(turretToBuild, transform.position + _pos, transform.rotation);
+                _player._money -= 10;
+                _uiManager.UpdateMoney(-10);
+            }
+        }
+        if (_player._money >= 15)
+        {
+            if (_player._Type == Player.Type.Fire)
+            {
+                GameObject turretToBuild = BuildManager.instance.GetTurretToBuild();
+                turret = (GameObject)Instantiate(turretToBuild, transform.position + _pos, transform.rotation);
+                _player._money -= 15;
+                _uiManager.UpdateMoney(-15);
+            }
+        }
+
     }
 
     void OnMouseEnter()

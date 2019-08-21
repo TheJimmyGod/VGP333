@@ -83,7 +83,6 @@ public class GameLoader : AsyncLoader
     {
         // Setup Core Systems
         Debug.Log("Loading Core Systems");
-        yield return new WaitForSeconds(7.0f);
 
         // UI Manager
         GameObject uiManagerGO = GameObject.Instantiate(UIManagerPrefab);

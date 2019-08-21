@@ -13,10 +13,9 @@ GameObject:
   - component: {fileID: 4318577206115587226}
   - component: {fileID: 1281110801462976526}
   - component: {fileID: 3559324613873560274}
-  - component: {fileID: 636889229688327687}
   m_Layer: 0
   m_Name: BasicTower
-  m_TagString: Untagged
+  m_TagString: Basic
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -108,6 +107,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   target: {fileID: 0}
+  partToRotate: {fileID: 9221916654689626691}
+  _enemyTag: Enemy
   DataSourceId: BasicTower
   _name: 
   _range: 0
@@ -115,28 +116,6 @@ MonoBehaviour:
   _speed: 0
   _attackRate: 0
   _cost: 0
---- !u!195 &636889229688327687
-NavMeshAgent:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1875260789610222514}
-  m_Enabled: 1
-  m_AgentTypeID: 0
-  m_Radius: 0.5000001
-  m_Speed: 3.5
-  m_Acceleration: 8
-  avoidancePriority: 50
-  m_AngularSpeed: 120
-  m_StoppingDistance: 0
-  m_AutoTraverseOffMeshLink: 1
-  m_AutoBraking: 1
-  m_AutoRepath: 1
-  m_Height: 2
-  m_BaseOffset: 1
-  m_WalkableMask: 4294967295
-  m_ObstacleAvoidanceType: 4
 --- !u!1 &6864147934517515237
 GameObject:
   m_ObjectHideFlags: 0
@@ -160,13 +139,13 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 6864147934517515237}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0.608, y: 0, z: 0}
+  m_LocalRotation: {x: 0.7071068, y: 0, z: 0, w: 0.7071068}
+  m_LocalPosition: {x: 0.791, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 8353693866291971738}
   m_RootOrder: 0
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_LocalEulerAnglesHint: {x: 90, y: 0, z: 0}
 --- !u!1 &8686009241175553517
 GameObject:
   m_ObjectHideFlags: 0
@@ -195,7 +174,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 8686009241175553517}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0.71, y: 0.20000005, z: 0}
+  m_LocalPosition: {x: 0.811, y: 0.20000005, z: 0}
   m_LocalScale: {x: 1, y: 0.2, z: 0.2}
   m_Children:
   - {fileID: 4294019410360533312}
@@ -275,5 +254,4 @@ MonoBehaviour:
   BulletSpawnPoint: {fileID: 4294019410360533312}
   bulletPrefab: {fileID: 1750881108342479447, guid: ee3b7f56528214c479feb3bbd06e9209,
     type: 3}
-  _tower: {fileID: 1875260789610222514}
   bulletSpeed: 0

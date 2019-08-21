@@ -1,7 +1,6 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-using UnityEngine.AI;
 public class Tower : MonoBehaviour
 {
     public Transform target;
@@ -10,11 +9,11 @@ public class Tower : MonoBehaviour
     private float autoTime;
 
     private UIManager _uiManager;
-    private NavMeshAgent _agent;
     private DataLoader _dataLoader;
     private JsonDataSource _towerData;
     private Gun _gun;
 
+    public string _enemyTag = "Enemy";
     public string DataSourceId = "BasicTower";
     public string _name;
     public float _range;
@@ -25,8 +24,11 @@ public class Tower : MonoBehaviour
 
     private void Awake()
     {
+        if(ServiceLocator.Get<Tower>() == null)
+        {
+            ServiceLocator.Register<Tower>(this);
+        }
         _uiManager = ServiceLocator.Get<UIManager>();
-        _agent = GetComponent<NavMeshAgent>();
         _dataLoader = ServiceLocator.Get<DataLoader>();
         _towerData = _dataLoader.GetDataSourceById(DataSourceId) as JsonDataSource;
 
@@ -46,12 +48,12 @@ public class Tower : MonoBehaviour
 
     void Start()
     {
-        InvokeRepeating("UpdateTarget", 0f, 0f);
+        InvokeRepeating("UpdateTarget", 0f, 0.1f);
     }
 
     void UpdateTarget()
     {
-        GameObject[] enemies = GameObject.FindGameObjectsWithTag("Enemy");
+        GameObject[] enemies = GameObject.FindGameObjectsWithTag(_enemyTag);
         float _shortestDistance = Mathf.Infinity;
         GameObject _nearestEnemy = null;
         foreach(GameObject enemy in enemies)
@@ -73,16 +75,11 @@ public class Tower : MonoBehaviour
             target = null;
         }
     }
-
-
-
     void Update()
     {
-        shotTime += Time.deltaTime;
 
         if (target == null)
         {
-            _agent.isStopped = true;
             return;
         }
 
@@ -91,22 +88,12 @@ public class Tower : MonoBehaviour
         Vector3 rot = _lookRot.eulerAngles;
         partToRotate.rotation = Quaternion.Euler(0f,rot.y,0f);
 
-
-
-        if (Vector3.Distance(_agent.transform.position, target.position) < _range)
+        if(shotTime <= 0f)
         {
-            _agent.isStopped = true;
-            _agent.transform.LookAt(target.position);
-            if(shotTime > (autoTime * _attackRate))
-            {
-                autoTime++;
-                _gun.Shoot();
-            }
+            _gun.Shoot();
+            shotTime = 1f / _attackRate; 
+        }
 
-        }
-        else
-        {
-            _agent.isStopped = false;
-        }
+        shotTime -= Time.deltaTime;
     }
 }

@@ -65,6 +65,11 @@ public class UnitSpawner : MonoBehaviour
             _currentWave++;
             yield return new WaitForSeconds(secondBetweenWave);
         }
+        while(_activeEnemies.Count <= 1)
+        {
+
+        }
+        _uiManager.SetWinText();
     }
 
     private void SpawnWave(int waveNumber)

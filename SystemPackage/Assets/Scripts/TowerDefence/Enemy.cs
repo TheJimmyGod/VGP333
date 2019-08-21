@@ -12,7 +12,6 @@ public class Enemy : MonoBehaviour, IDamageable
     private WayPointManager.Path _path;
     private NavMeshAgent _agent;
     private int _currentWaypoint = 0;
-    private float _currentHealth = 10.0f;
     private DataLoader _dataLoader;
     private JsonDataSource _enemyData;
 
@@ -34,8 +33,6 @@ public class Enemy : MonoBehaviour, IDamageable
         _health = System.Convert.ToSingle(_enemyData.DataDictionary["Health"]);
         _money = System.Convert.ToInt32(_enemyData.DataDictionary["Money"]);
         _defence = System.Convert.ToInt32(_enemyData.DataDictionary["Defence"]);
-
-        _currentHealth = _health;
     }
 
     void Update()
@@ -73,11 +70,12 @@ public class Enemy : MonoBehaviour, IDamageable
 
     public void TakeDamage(float dmg)
     {
-        _currentHealth = _currentHealth - (dmg - _defence);
-        if(_currentHealth <= 0)
+        _health = _health - (dmg - _defence);
+        if (_health <= 0)
         {
             _player._money += _money;
-            _uiManager.UpdateMoney(_money);
+            ServiceLocator.Get<UIManager>().UpdateMoney(_money);
+            Destroy(gameObject);
             _Killed();
         }
     }

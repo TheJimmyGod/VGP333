@@ -6,6 +6,9 @@ TagManager:
   tags:
   - Services
   - Enemy
+  - Basic
+  - Ice
+  - Fire
   layers:
   - Default
   - TransparentFX

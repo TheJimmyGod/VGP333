@@ -1,8 +1,8 @@
 {
   "Damage": 25,
   "Range": 180,
-  "Speed": 900,
-  "AttackRate" : 0.8,
+  "Speed": 1300,
+  "AttackRate" : 0.75,
   "Cost" : 15,
   "Name": "FireTower"
 }

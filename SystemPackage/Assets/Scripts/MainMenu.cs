@@ -15,6 +15,8 @@ public class MainMenu : MonoBehaviour
 
     private IEnumerator LoadLevelRoutine()
     {
+        ServiceLocator.Get<UIManager>().gameObject.SetActive(true);
         yield return SceneManager.LoadSceneAsync(levelToLoad);
+        
     }
 }

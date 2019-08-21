@@ -169,7 +169,7 @@ MonoBehaviour:
   _hoverColor: {r: 0.21226418, g: 0.96333444, b: 1, a: 0}
   _gameObject: {fileID: 0}
   _player: {fileID: 0}
-  _pos: {x: 0, y: 0, z: 0}
+  _pos: {x: 0, y: 0.5, z: 0}
   _basicTower: {fileID: 0}
 --- !u!65 &12877734
 BoxCollider:
@@ -183,7 +183,7 @@ BoxCollider:
   m_Enabled: 1
   serializedVersion: 2
   m_Size: {x: 1, y: 1, z: 1}
-  m_Center: {x: 0, y: 0, z: 0}
+  m_Center: {x: 0, y: 0.5, z: 0}
 --- !u!23 &12877735
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -278,7 +278,7 @@ MonoBehaviour:
   _hoverColor: {r: 0.21226418, g: 0.96333444, b: 1, a: 0}
   _gameObject: {fileID: 0}
   _player: {fileID: 0}
-  _pos: {x: 0, y: 0, z: 0}
+  _pos: {x: 0, y: 0.5, z: 0}
   _basicTower: {fileID: 0}
 --- !u!65 &92263218
 BoxCollider:
@@ -292,7 +292,7 @@ BoxCollider:
   m_Enabled: 1
   serializedVersion: 2
   m_Size: {x: 1, y: 1, z: 1}
-  m_Center: {x: 0, y: 0, z: 0}
+  m_Center: {x: 0, y: 0.5, z: 0}
 --- !u!23 &92263219
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -387,7 +387,7 @@ MonoBehaviour:
   _hoverColor: {r: 0.21226418, g: 0.96333444, b: 1, a: 0}
   _gameObject: {fileID: 0}
   _player: {fileID: 0}
-  _pos: {x: 0, y: 0, z: 0}
+  _pos: {x: 0, y: 0.5, z: 0}
   _basicTower: {fileID: 0}
 --- !u!65 &109449129
 BoxCollider:
@@ -401,7 +401,7 @@ BoxCollider:
   m_Enabled: 1
   serializedVersion: 2
   m_Size: {x: 1, y: 1, z: 1}
-  m_Center: {x: 0, y: 0, z: 0}
+  m_Center: {x: 0, y: 0.5, z: 0}
 --- !u!23 &109449130
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -496,7 +496,7 @@ MonoBehaviour:
   _hoverColor: {r: 0.21226418, g: 0.96333444, b: 1, a: 0}
   _gameObject: {fileID: 0}
   _player: {fileID: 0}
-  _pos: {x: 0, y: 0, z: 0}
+  _pos: {x: 0, y: 0.5, z: 0}
   _basicTower: {fileID: 0}
 --- !u!65 &135252829
 BoxCollider:
@@ -510,7 +510,7 @@ BoxCollider:
   m_Enabled: 1
   serializedVersion: 2
   m_Size: {x: 1, y: 1, z: 1}
-  m_Center: {x: 0, y: 0, z: 0}
+  m_Center: {x: 0, y: 0.5, z: 0}
 --- !u!23 &135252830
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -605,7 +605,7 @@ MonoBehaviour:
   _hoverColor: {r: 0.21226418, g: 0.96333444, b: 1, a: 0}
   _gameObject: {fileID: 0}
   _player: {fileID: 0}
-  _pos: {x: 0, y: 0, z: 0}
+  _pos: {x: 0, y: 0.5, z: 0}
   _basicTower: {fileID: 0}
 --- !u!65 &165874183
 BoxCollider:
@@ -619,7 +619,7 @@ BoxCollider:
   m_Enabled: 1
   serializedVersion: 2
   m_Size: {x: 1, y: 1, z: 1}
-  m_Center: {x: 0, y: 0, z: 0}
+  m_Center: {x: 0, y: 0.5, z: 0}
 --- !u!23 &165874184
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -714,7 +714,7 @@ MonoBehaviour:
   _hoverColor: {r: 0.21226418, g: 0.96333444, b: 1, a: 0}
   _gameObject: {fileID: 0}
   _player: {fileID: 0}
-  _pos: {x: 0, y: 0, z: 0}
+  _pos: {x: 0, y: 0.5, z: 0}
   _basicTower: {fileID: 0}
 --- !u!65 &170143485
 BoxCollider:
@@ -728,7 +728,7 @@ BoxCollider:
   m_Enabled: 1
   serializedVersion: 2
   m_Size: {x: 1, y: 1, z: 1}
-  m_Center: {x: 0, y: 0, z: 0}
+  m_Center: {x: 0, y: 0.5, z: 0}
 --- !u!23 &170143486
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -823,7 +823,7 @@ MonoBehaviour:
   _hoverColor: {r: 0.21226418, g: 0.96333444, b: 1, a: 0}
   _gameObject: {fileID: 0}
   _player: {fileID: 0}
-  _pos: {x: 0, y: 0, z: 0}
+  _pos: {x: 0, y: 0.5, z: 0}
   _basicTower: {fileID: 0}
 --- !u!65 &186260941
 BoxCollider:
@@ -837,7 +837,7 @@ BoxCollider:
   m_Enabled: 1
   serializedVersion: 2
   m_Size: {x: 1, y: 1, z: 1}
-  m_Center: {x: 0, y: 0, z: 0}
+  m_Center: {x: 0, y: 0.5, z: 0}
 --- !u!23 &186260942
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -980,7 +980,7 @@ MonoBehaviour:
   _hoverColor: {r: 0.21226418, g: 0.96333444, b: 1, a: 0}
   _gameObject: {fileID: 0}
   _player: {fileID: 0}
-  _pos: {x: 0, y: 0, z: 0}
+  _pos: {x: 0, y: 0.5, z: 0}
   _basicTower: {fileID: 0}
 --- !u!65 &279837770
 BoxCollider:
@@ -994,7 +994,7 @@ BoxCollider:
   m_Enabled: 1
   serializedVersion: 2
   m_Size: {x: 1, y: 1, z: 1}
-  m_Center: {x: 0, y: 0, z: 0}
+  m_Center: {x: 0, y: 0.5, z: 0}
 --- !u!23 &279837771
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -1137,7 +1137,7 @@ MonoBehaviour:
   _hoverColor: {r: 0.21226418, g: 0.96333444, b: 1, a: 0}
   _gameObject: {fileID: 0}
   _player: {fileID: 0}
-  _pos: {x: 0, y: 0, z: 0}
+  _pos: {x: 0, y: 0.5, z: 0}
   _basicTower: {fileID: 0}
 --- !u!65 &296217157
 BoxCollider:
@@ -1151,7 +1151,7 @@ BoxCollider:
   m_Enabled: 1
   serializedVersion: 2
   m_Size: {x: 1, y: 1, z: 1}
-  m_Center: {x: 0, y: 0, z: 0}
+  m_Center: {x: 0, y: 0.5, z: 0}
 --- !u!23 &296217158
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -1246,7 +1246,7 @@ MonoBehaviour:
   _hoverColor: {r: 0.21226418, g: 0.96333444, b: 1, a: 0}
   _gameObject: {fileID: 0}
   _player: {fileID: 0}
-  _pos: {x: 0, y: 0, z: 0}
+  _pos: {x: 0, y: 0.5, z: 0}
   _basicTower: {fileID: 0}
 --- !u!65 &308772048
 BoxCollider:
@@ -1260,7 +1260,7 @@ BoxCollider:
   m_Enabled: 1
   serializedVersion: 2
   m_Size: {x: 1, y: 1, z: 1}
-  m_Center: {x: 0, y: 0, z: 0}
+  m_Center: {x: 0, y: 0.5, z: 0}
 --- !u!23 &308772049
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -1355,7 +1355,7 @@ MonoBehaviour:
   _hoverColor: {r: 0.21226418, g: 0.96333444, b: 1, a: 0}
   _gameObject: {fileID: 0}
   _player: {fileID: 0}
-  _pos: {x: 0, y: 0, z: 0}
+  _pos: {x: 0, y: 0.5, z: 0}
   _basicTower: {fileID: 0}
 --- !u!65 &345940250
 BoxCollider:
@@ -1369,7 +1369,7 @@ BoxCollider:
   m_Enabled: 1
   serializedVersion: 2
   m_Size: {x: 1, y: 1, z: 1}
-  m_Center: {x: 0, y: 0, z: 0}
+  m_Center: {x: 0, y: 0.5, z: 0}
 --- !u!23 &345940251
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -1464,7 +1464,7 @@ MonoBehaviour:
   _hoverColor: {r: 0.21226418, g: 0.96333444, b: 1, a: 0}
   _gameObject: {fileID: 0}
   _player: {fileID: 0}
-  _pos: {x: 0, y: 0, z: 0}
+  _pos: {x: 0, y: 0.5, z: 0}
   _basicTower: {fileID: 0}
 --- !u!65 &388546443
 BoxCollider:
@@ -1478,7 +1478,7 @@ BoxCollider:
   m_Enabled: 1
   serializedVersion: 2
   m_Size: {x: 1, y: 1, z: 1}
-  m_Center: {x: 0, y: 0, z: 0}
+  m_Center: {x: 0, y: 0.5, z: 0}
 --- !u!23 &388546444
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -1554,7 +1554,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0a462343df9897046ab84ac560efc900, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  _player: {fileID: 394014703}
   _turretPrefab: {fileID: 1875260789610222514, guid: 2c611a62b801c0d429ebe671e74ad907,
+    type: 3}
+  _IceturretPrefab: {fileID: 3928622856887664662, guid: 275a2946923bed940a6953d4d984964c,
+    type: 3}
+  _FireturretPrefab: {fileID: 8494414761003778491, guid: ca5aa869d3c49cb429d16d6fc6e2efc9,
     type: 3}
 --- !u!114 &394014703
 MonoBehaviour:
@@ -1583,7 +1588,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 6
+  m_RootOrder: 7
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &510583287
 GameObject:
@@ -1634,7 +1639,7 @@ MonoBehaviour:
   _hoverColor: {r: 0.21226418, g: 0.96333444, b: 1, a: 0}
   _gameObject: {fileID: 0}
   _player: {fileID: 0}
-  _pos: {x: 0, y: 0, z: 0}
+  _pos: {x: 0, y: 0.5, z: 0}
   _basicTower: {fileID: 0}
 --- !u!65 &510583290
 BoxCollider:
@@ -1648,7 +1653,7 @@ BoxCollider:
   m_Enabled: 1
   serializedVersion: 2
   m_Size: {x: 1, y: 1, z: 1}
-  m_Center: {x: 0, y: 0, z: 0}
+  m_Center: {x: 0, y: 0.5, z: 0}
 --- !u!23 &510583291
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -1797,7 +1802,7 @@ MonoBehaviour:
   _hoverColor: {r: 0.21226418, g: 0.96333444, b: 1, a: 0}
   _gameObject: {fileID: 0}
   _player: {fileID: 0}
-  _pos: {x: 0, y: 0, z: 0}
+  _pos: {x: 0, y: 0.5, z: 0}
   _basicTower: {fileID: 0}
 --- !u!65 &524542130
 BoxCollider:
@@ -1811,7 +1816,7 @@ BoxCollider:
   m_Enabled: 1
   serializedVersion: 2
   m_Size: {x: 1, y: 1, z: 1}
-  m_Center: {x: 0, y: 0, z: 0}
+  m_Center: {x: 0, y: 0.5, z: 0}
 --- !u!23 &524542131
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -1906,7 +1911,7 @@ MonoBehaviour:
   _hoverColor: {r: 0.21226418, g: 0.96333444, b: 1, a: 0}
   _gameObject: {fileID: 0}
   _player: {fileID: 0}
-  _pos: {x: 0, y: 0, z: 0}
+  _pos: {x: 0, y: 0.5, z: 0}
   _basicTower: {fileID: 0}
 --- !u!65 &580362869
 BoxCollider:
@@ -1920,7 +1925,7 @@ BoxCollider:
   m_Enabled: 1
   serializedVersion: 2
   m_Size: {x: 1, y: 1, z: 1}
-  m_Center: {x: 0, y: 0, z: 0}
+  m_Center: {x: 0, y: 0.5, z: 0}
 --- !u!23 &580362870
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -2015,7 +2020,7 @@ MonoBehaviour:
   _hoverColor: {r: 0.21226418, g: 0.96333444, b: 1, a: 0}
   _gameObject: {fileID: 0}
   _player: {fileID: 0}
-  _pos: {x: 0, y: 0, z: 0}
+  _pos: {x: 0, y: 0.5, z: 0}
   _basicTower: {fileID: 0}
 --- !u!65 &596572935
 BoxCollider:
@@ -2029,7 +2034,7 @@ BoxCollider:
   m_Enabled: 1
   serializedVersion: 2
   m_Size: {x: 1, y: 1, z: 1}
-  m_Center: {x: 0, y: 0, z: 0}
+  m_Center: {x: 0, y: 0.5, z: 0}
 --- !u!23 &596572936
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -2124,7 +2129,7 @@ MonoBehaviour:
   _hoverColor: {r: 0.21226418, g: 0.96333444, b: 1, a: 0}
   _gameObject: {fileID: 0}
   _player: {fileID: 0}
-  _pos: {x: 0, y: 0, z: 0}
+  _pos: {x: 0, y: 0.5, z: 0}
   _basicTower: {fileID: 0}
 --- !u!65 &597333074
 BoxCollider:
@@ -2138,7 +2143,7 @@ BoxCollider:
   m_Enabled: 1
   serializedVersion: 2
   m_Size: {x: 1, y: 1, z: 1}
-  m_Center: {x: 0, y: 0, z: 0}
+  m_Center: {x: 0, y: 0.5, z: 0}
 --- !u!23 &597333075
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -2233,7 +2238,7 @@ MonoBehaviour:
   _hoverColor: {r: 0.21226418, g: 0.96333444, b: 1, a: 0}
   _gameObject: {fileID: 0}
   _player: {fileID: 0}
-  _pos: {x: 0, y: 0, z: 0}
+  _pos: {x: 0, y: 0.5, z: 0}
   _basicTower: {fileID: 0}
 --- !u!65 &601800243
 BoxCollider:
@@ -2247,7 +2252,7 @@ BoxCollider:
   m_Enabled: 1
   serializedVersion: 2
   m_Size: {x: 1, y: 1, z: 1}
-  m_Center: {x: 0, y: 0, z: 0}
+  m_Center: {x: 0, y: 0.5, z: 0}
 --- !u!23 &601800244
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -2342,7 +2347,7 @@ MonoBehaviour:
   _hoverColor: {r: 0.21226418, g: 0.96333444, b: 1, a: 0}
   _gameObject: {fileID: 0}
   _player: {fileID: 0}
-  _pos: {x: 0, y: 0, z: 0}
+  _pos: {x: 0, y: 0.5, z: 0}
   _basicTower: {fileID: 0}
 --- !u!65 &651522887
 BoxCollider:
@@ -2356,7 +2361,7 @@ BoxCollider:
   m_Enabled: 1
   serializedVersion: 2
   m_Size: {x: 1, y: 1, z: 1}
-  m_Center: {x: 0, y: 0, z: 0}
+  m_Center: {x: 0, y: 0.5, z: 0}
 --- !u!23 &651522888
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -2451,7 +2456,7 @@ MonoBehaviour:
   _hoverColor: {r: 0.21226418, g: 0.96333444, b: 1, a: 0}
   _gameObject: {fileID: 0}
   _player: {fileID: 0}
-  _pos: {x: 0, y: 0, z: 0}
+  _pos: {x: 0, y: 0.5, z: 0}
   _basicTower: {fileID: 0}
 --- !u!65 &662895197
 BoxCollider:
@@ -2465,7 +2470,7 @@ BoxCollider:
   m_Enabled: 1
   serializedVersion: 2
   m_Size: {x: 1, y: 1, z: 1}
-  m_Center: {x: 0, y: 0, z: 0}
+  m_Center: {x: 0, y: 0.5, z: 0}
 --- !u!23 &662895198
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -2560,7 +2565,7 @@ MonoBehaviour:
   _hoverColor: {r: 0.21226418, g: 0.96333444, b: 1, a: 0}
   _gameObject: {fileID: 0}
   _player: {fileID: 0}
-  _pos: {x: 0, y: 0, z: 0}
+  _pos: {x: 0, y: 0.5, z: 0}
   _basicTower: {fileID: 0}
 --- !u!65 &690721599
 BoxCollider:
@@ -2574,7 +2579,7 @@ BoxCollider:
   m_Enabled: 1
   serializedVersion: 2
   m_Size: {x: 1, y: 1, z: 1}
-  m_Center: {x: 0, y: 0, z: 0}
+  m_Center: {x: 0, y: 0.5, z: 0}
 --- !u!23 &690721600
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -2752,7 +2757,7 @@ MonoBehaviour:
   _hoverColor: {r: 0.21226418, g: 0.96333444, b: 1, a: 0}
   _gameObject: {fileID: 0}
   _player: {fileID: 0}
-  _pos: {x: 0, y: 0, z: 0}
+  _pos: {x: 0, y: 0.5, z: 0}
   _basicTower: {fileID: 0}
 --- !u!65 &695637044
 BoxCollider:
@@ -2766,7 +2771,7 @@ BoxCollider:
   m_Enabled: 1
   serializedVersion: 2
   m_Size: {x: 1, y: 1, z: 1}
-  m_Center: {x: 0, y: 0, z: 0}
+  m_Center: {x: 0, y: 0.5, z: 0}
 --- !u!23 &695637045
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -2861,7 +2866,7 @@ MonoBehaviour:
   _hoverColor: {r: 0.21226418, g: 0.96333444, b: 1, a: 0}
   _gameObject: {fileID: 0}
   _player: {fileID: 0}
-  _pos: {x: 0, y: 0, z: 0}
+  _pos: {x: 0, y: 0.5, z: 0}
   _basicTower: {fileID: 0}
 --- !u!65 &704931127
 BoxCollider:
@@ -2875,7 +2880,7 @@ BoxCollider:
   m_Enabled: 1
   serializedVersion: 2
   m_Size: {x: 1, y: 1, z: 1}
-  m_Center: {x: 0, y: 0, z: 0}
+  m_Center: {x: 0, y: 0.5, z: 0}
 --- !u!23 &704931128
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -2970,7 +2975,7 @@ MonoBehaviour:
   _hoverColor: {r: 0.21226418, g: 0.96333444, b: 1, a: 0}
   _gameObject: {fileID: 0}
   _player: {fileID: 0}
-  _pos: {x: 0, y: 0, z: 0}
+  _pos: {x: 0, y: 0.5, z: 0}
   _basicTower: {fileID: 0}
 --- !u!65 &712558330
 BoxCollider:
@@ -2984,7 +2989,7 @@ BoxCollider:
   m_Enabled: 1
   serializedVersion: 2
   m_Size: {x: 1, y: 1, z: 1}
-  m_Center: {x: 0, y: 0, z: 0}
+  m_Center: {x: 0, y: 0.5, z: 0}
 --- !u!23 &712558331
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -3079,7 +3084,7 @@ MonoBehaviour:
   _hoverColor: {r: 0.21226418, g: 0.96333444, b: 1, a: 0}
   _gameObject: {fileID: 0}
   _player: {fileID: 0}
-  _pos: {x: 0, y: 0, z: 0}
+  _pos: {x: 0, y: 0.5, z: 0}
   _basicTower: {fileID: 0}
 --- !u!65 &726873251
 BoxCollider:
@@ -3093,7 +3098,7 @@ BoxCollider:
   m_Enabled: 1
   serializedVersion: 2
   m_Size: {x: 1, y: 1, z: 1}
-  m_Center: {x: 0, y: 0, z: 0}
+  m_Center: {x: 0, y: 0.5, z: 0}
 --- !u!23 &726873252
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -3188,7 +3193,7 @@ MonoBehaviour:
   _hoverColor: {r: 0.21226418, g: 0.96333444, b: 1, a: 0}
   _gameObject: {fileID: 0}
   _player: {fileID: 0}
-  _pos: {x: 0, y: 0, z: 0}
+  _pos: {x: 0, y: 0.5, z: 0}
   _basicTower: {fileID: 0}
 --- !u!65 &763275049
 BoxCollider:
@@ -3202,7 +3207,7 @@ BoxCollider:
   m_Enabled: 1
   serializedVersion: 2
   m_Size: {x: 1, y: 1, z: 1}
-  m_Center: {x: 0, y: 0, z: 0}
+  m_Center: {x: 0, y: 0.5, z: 0}
 --- !u!23 &763275050
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -3297,7 +3302,7 @@ MonoBehaviour:
   _hoverColor: {r: 0.21226418, g: 0.96333444, b: 1, a: 0}
   _gameObject: {fileID: 0}
   _player: {fileID: 0}
-  _pos: {x: 0, y: 0, z: 0}
+  _pos: {x: 0, y: 0.5, z: 0}
   _basicTower: {fileID: 0}
 --- !u!65 &776677921
 BoxCollider:
@@ -3311,7 +3316,7 @@ BoxCollider:
   m_Enabled: 1
   serializedVersion: 2
   m_Size: {x: 1, y: 1, z: 1}
-  m_Center: {x: 0, y: 0, z: 0}
+  m_Center: {x: 0, y: 0.5, z: 0}
 --- !u!23 &776677922
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -3406,7 +3411,7 @@ MonoBehaviour:
   _hoverColor: {r: 0.21226418, g: 0.96333444, b: 1, a: 0}
   _gameObject: {fileID: 0}
   _player: {fileID: 0}
-  _pos: {x: 0, y: 0, z: 0}
+  _pos: {x: 0, y: 0.5, z: 0}
   _basicTower: {fileID: 0}
 --- !u!65 &810784723
 BoxCollider:
@@ -3420,7 +3425,7 @@ BoxCollider:
   m_Enabled: 1
   serializedVersion: 2
   m_Size: {x: 1, y: 1, z: 1}
-  m_Center: {x: 0, y: 0, z: 0}
+  m_Center: {x: 0, y: 0.5, z: 0}
 --- !u!23 &810784724
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -3515,7 +3520,7 @@ MonoBehaviour:
   _hoverColor: {r: 0.21226418, g: 0.96333444, b: 1, a: 0}
   _gameObject: {fileID: 0}
   _player: {fileID: 0}
-  _pos: {x: 0, y: 0, z: 0}
+  _pos: {x: 0, y: 0.5, z: 0}
   _basicTower: {fileID: 0}
 --- !u!65 &867903462
 BoxCollider:
@@ -3529,7 +3534,7 @@ BoxCollider:
   m_Enabled: 1
   serializedVersion: 2
   m_Size: {x: 1, y: 1, z: 1}
-  m_Center: {x: 0, y: 0, z: 0}
+  m_Center: {x: 0, y: 0.5, z: 0}
 --- !u!23 &867903463
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -3624,7 +3629,7 @@ MonoBehaviour:
   _hoverColor: {r: 0.21226418, g: 0.96333444, b: 1, a: 0}
   _gameObject: {fileID: 0}
   _player: {fileID: 0}
-  _pos: {x: 0, y: 0, z: 0}
+  _pos: {x: 0, y: 0.5, z: 0}
   _basicTower: {fileID: 0}
 --- !u!65 &891186272
 BoxCollider:
@@ -3638,7 +3643,7 @@ BoxCollider:
   m_Enabled: 1
   serializedVersion: 2
   m_Size: {x: 1, y: 1, z: 1}
-  m_Center: {x: 0, y: 0, z: 0}
+  m_Center: {x: 0, y: 0.5, z: 0}
 --- !u!23 &891186273
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -3733,7 +3738,7 @@ MonoBehaviour:
   _hoverColor: {r: 0.21226418, g: 0.96333444, b: 1, a: 0}
   _gameObject: {fileID: 0}
   _player: {fileID: 0}
-  _pos: {x: 0, y: 0, z: 0}
+  _pos: {x: 0, y: 0.5, z: 0}
   _basicTower: {fileID: 0}
 --- !u!65 &896528644
 BoxCollider:
@@ -3747,7 +3752,7 @@ BoxCollider:
   m_Enabled: 1
   serializedVersion: 2
   m_Size: {x: 1, y: 1, z: 1}
-  m_Center: {x: 0, y: 0, z: 0}
+  m_Center: {x: 0, y: 0.5, z: 0}
 --- !u!23 &896528645
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -3837,7 +3842,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 7
+  m_RootOrder: 6
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &929890719
 GameObject:
@@ -3867,7 +3872,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 929890719}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -13, y: 0, z: 13.57}
+  m_LocalPosition: {x: -8.74, y: 0, z: 13.57}
   m_LocalScale: {x: 4, y: 1, z: 4}
   m_Children: []
   m_Father: {fileID: 1029503556}
@@ -3888,7 +3893,7 @@ MonoBehaviour:
   _hoverColor: {r: 0.21226418, g: 0.96333444, b: 1, a: 0}
   _gameObject: {fileID: 0}
   _player: {fileID: 0}
-  _pos: {x: 0, y: 0, z: 0}
+  _pos: {x: 0, y: 0.5, z: 0}
   _basicTower: {fileID: 0}
 --- !u!65 &929890722
 BoxCollider:
@@ -3902,7 +3907,7 @@ BoxCollider:
   m_Enabled: 1
   serializedVersion: 2
   m_Size: {x: 1, y: 1, z: 1}
-  m_Center: {x: 0, y: 0, z: 0}
+  m_Center: {x: 0, y: 0.5, z: 0}
 --- !u!23 &929890723
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -4163,7 +4168,7 @@ MonoBehaviour:
   _hoverColor: {r: 0.21226418, g: 0.96333444, b: 1, a: 0}
   _gameObject: {fileID: 0}
   _player: {fileID: 0}
-  _pos: {x: 0, y: 0, z: 0}
+  _pos: {x: 0, y: 0.5, z: 0}
   _basicTower: {fileID: 0}
 --- !u!65 &1105544706
 BoxCollider:
@@ -4177,7 +4182,7 @@ BoxCollider:
   m_Enabled: 1
   serializedVersion: 2
   m_Size: {x: 1, y: 1, z: 1}
-  m_Center: {x: 0, y: 0, z: 0}
+  m_Center: {x: 0, y: 0.5, z: 0}
 --- !u!23 &1105544707
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -4272,7 +4277,7 @@ MonoBehaviour:
   _hoverColor: {r: 0.21226418, g: 0.96333444, b: 1, a: 0}
   _gameObject: {fileID: 0}
   _player: {fileID: 0}
-  _pos: {x: 0, y: 0, z: 0}
+  _pos: {x: 0, y: 0.5, z: 0}
   _basicTower: {fileID: 0}
 --- !u!65 &1108778964
 BoxCollider:
@@ -4286,7 +4291,7 @@ BoxCollider:
   m_Enabled: 1
   serializedVersion: 2
   m_Size: {x: 1, y: 1, z: 1}
-  m_Center: {x: 0, y: 0, z: 0}
+  m_Center: {x: 0, y: 0.5, z: 0}
 --- !u!23 &1108778965
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -4381,7 +4386,7 @@ MonoBehaviour:
   _hoverColor: {r: 0.21226418, g: 0.96333444, b: 1, a: 0}
   _gameObject: {fileID: 0}
   _player: {fileID: 0}
-  _pos: {x: 0, y: 0, z: 0}
+  _pos: {x: 0, y: 0.5, z: 0}
   _basicTower: {fileID: 0}
 --- !u!65 &1115881747
 BoxCollider:
@@ -4395,7 +4400,7 @@ BoxCollider:
   m_Enabled: 1
   serializedVersion: 2
   m_Size: {x: 1, y: 1, z: 1}
-  m_Center: {x: 0, y: 0, z: 0}
+  m_Center: {x: 0, y: 0.5, z: 0}
 --- !u!23 &1115881748
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -4490,7 +4495,7 @@ MonoBehaviour:
   _hoverColor: {r: 0.21226418, g: 0.96333444, b: 1, a: 0}
   _gameObject: {fileID: 0}
   _player: {fileID: 0}
-  _pos: {x: 0, y: 0, z: 0}
+  _pos: {x: 0, y: 0.5, z: 0}
   _basicTower: {fileID: 0}
 --- !u!65 &1197877634
 BoxCollider:
@@ -4504,7 +4509,7 @@ BoxCollider:
   m_Enabled: 1
   serializedVersion: 2
   m_Size: {x: 1, y: 1, z: 1}
-  m_Center: {x: 0, y: 0, z: 0}
+  m_Center: {x: 0, y: 0.5, z: 0}
 --- !u!23 &1197877635
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -4599,7 +4604,7 @@ MonoBehaviour:
   _hoverColor: {r: 0.21226418, g: 0.96333444, b: 1, a: 0}
   _gameObject: {fileID: 0}
   _player: {fileID: 0}
-  _pos: {x: 0, y: 0, z: 0}
+  _pos: {x: 0, y: 0.5, z: 0}
   _basicTower: {fileID: 0}
 --- !u!65 &1216131343
 BoxCollider:
@@ -4613,7 +4618,7 @@ BoxCollider:
   m_Enabled: 1
   serializedVersion: 2
   m_Size: {x: 1, y: 1, z: 1}
-  m_Center: {x: 0, y: 0, z: 0}
+  m_Center: {x: 0, y: 0.5, z: 0}
 --- !u!23 &1216131344
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -4708,7 +4713,7 @@ MonoBehaviour:
   _hoverColor: {r: 0.21226418, g: 0.96333444, b: 1, a: 0}
   _gameObject: {fileID: 0}
   _player: {fileID: 0}
-  _pos: {x: 0, y: 0, z: 0}
+  _pos: {x: 0, y: 0.5, z: 0}
   _basicTower: {fileID: 0}
 --- !u!65 &1298249290
 BoxCollider:
@@ -4722,7 +4727,7 @@ BoxCollider:
   m_Enabled: 1
   serializedVersion: 2
   m_Size: {x: 1, y: 1, z: 1}
-  m_Center: {x: 0, y: 0, z: 0}
+  m_Center: {x: 0, y: 0.5, z: 0}
 --- !u!23 &1298249291
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -4817,7 +4822,7 @@ MonoBehaviour:
   _hoverColor: {r: 0.21226418, g: 0.96333444, b: 1, a: 0}
   _gameObject: {fileID: 0}
   _player: {fileID: 0}
-  _pos: {x: 0, y: 0, z: 0}
+  _pos: {x: 0, y: 0.5, z: 0}
   _basicTower: {fileID: 0}
 --- !u!65 &1318288421
 BoxCollider:
@@ -4831,7 +4836,7 @@ BoxCollider:
   m_Enabled: 1
   serializedVersion: 2
   m_Size: {x: 1, y: 1, z: 1}
-  m_Center: {x: 0, y: 0, z: 0}
+  m_Center: {x: 0, y: 0.5, z: 0}
 --- !u!23 &1318288422
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -4974,7 +4979,7 @@ MonoBehaviour:
   _hoverColor: {r: 0.21226418, g: 0.96333444, b: 1, a: 0}
   _gameObject: {fileID: 0}
   _player: {fileID: 0}
-  _pos: {x: 0, y: 0, z: 0}
+  _pos: {x: 0, y: 0.5, z: 0}
   _basicTower: {fileID: 0}
 --- !u!65 &1354755241
 BoxCollider:
@@ -4988,7 +4993,7 @@ BoxCollider:
   m_Enabled: 1
   serializedVersion: 2
   m_Size: {x: 1, y: 1, z: 1}
-  m_Center: {x: 0, y: 0, z: 0}
+  m_Center: {x: 0, y: 0.5, z: 0}
 --- !u!23 &1354755242
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -5083,7 +5088,7 @@ MonoBehaviour:
   _hoverColor: {r: 0.21226418, g: 0.96333444, b: 1, a: 0}
   _gameObject: {fileID: 0}
   _player: {fileID: 0}
-  _pos: {x: 0, y: 0, z: 0}
+  _pos: {x: 0, y: 0.5, z: 0}
   _basicTower: {fileID: 0}
 --- !u!65 &1363526284
 BoxCollider:
@@ -5097,7 +5102,7 @@ BoxCollider:
   m_Enabled: 1
   serializedVersion: 2
   m_Size: {x: 1, y: 1, z: 1}
-  m_Center: {x: 0, y: 0, z: 0}
+  m_Center: {x: 0, y: 0.5, z: 0}
 --- !u!23 &1363526285
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -5192,7 +5197,7 @@ MonoBehaviour:
   _hoverColor: {r: 0.21226418, g: 0.96333444, b: 1, a: 0}
   _gameObject: {fileID: 0}
   _player: {fileID: 0}
-  _pos: {x: 0, y: 0, z: 0}
+  _pos: {x: 0, y: 0.5, z: 0}
   _basicTower: {fileID: 0}
 --- !u!65 &1398340117
 BoxCollider:
@@ -5206,7 +5211,7 @@ BoxCollider:
   m_Enabled: 1
   serializedVersion: 2
   m_Size: {x: 1, y: 1, z: 1}
-  m_Center: {x: 0, y: 0, z: 0}
+  m_Center: {x: 0, y: 0.5, z: 0}
 --- !u!23 &1398340118
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -5349,7 +5354,7 @@ MonoBehaviour:
   _hoverColor: {r: 0.21226418, g: 0.96333444, b: 1, a: 0}
   _gameObject: {fileID: 0}
   _player: {fileID: 0}
-  _pos: {x: 0, y: 0, z: 0}
+  _pos: {x: 0, y: 0.5, z: 0}
   _basicTower: {fileID: 0}
 --- !u!65 &1403877517
 BoxCollider:
@@ -5363,7 +5368,7 @@ BoxCollider:
   m_Enabled: 1
   serializedVersion: 2
   m_Size: {x: 1, y: 1, z: 1}
-  m_Center: {x: 0, y: 0, z: 0}
+  m_Center: {x: 0, y: 0.5, z: 0}
 --- !u!23 &1403877518
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -5458,7 +5463,7 @@ MonoBehaviour:
   _hoverColor: {r: 0.21226418, g: 0.96333444, b: 1, a: 0}
   _gameObject: {fileID: 0}
   _player: {fileID: 0}
-  _pos: {x: 0, y: 0, z: 0}
+  _pos: {x: 0, y: 0.5, z: 0}
   _basicTower: {fileID: 0}
 --- !u!65 &1426854233
 BoxCollider:
@@ -5472,7 +5477,7 @@ BoxCollider:
   m_Enabled: 1
   serializedVersion: 2
   m_Size: {x: 1, y: 1, z: 1}
-  m_Center: {x: 0, y: 0, z: 0}
+  m_Center: {x: 0, y: 0.5, z: 0}
 --- !u!23 &1426854234
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -5567,7 +5572,7 @@ MonoBehaviour:
   _hoverColor: {r: 0.21226418, g: 0.96333444, b: 1, a: 0}
   _gameObject: {fileID: 0}
   _player: {fileID: 0}
-  _pos: {x: 0, y: 0, z: 0}
+  _pos: {x: 0, y: 0.5, z: 0}
   _basicTower: {fileID: 0}
 --- !u!65 &1488727834
 BoxCollider:
@@ -5581,7 +5586,7 @@ BoxCollider:
   m_Enabled: 1
   serializedVersion: 2
   m_Size: {x: 1, y: 1, z: 1}
-  m_Center: {x: 0, y: 0, z: 0}
+  m_Center: {x: 0, y: 0.5, z: 0}
 --- !u!23 &1488727835
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -5676,7 +5681,7 @@ MonoBehaviour:
   _hoverColor: {r: 0.21226418, g: 0.96333444, b: 1, a: 0}
   _gameObject: {fileID: 0}
   _player: {fileID: 0}
-  _pos: {x: 0, y: 0, z: 0}
+  _pos: {x: 0, y: 0.5, z: 0}
   _basicTower: {fileID: 0}
 --- !u!65 &1498906406
 BoxCollider:
@@ -5690,7 +5695,7 @@ BoxCollider:
   m_Enabled: 1
   serializedVersion: 2
   m_Size: {x: 1, y: 1, z: 1}
-  m_Center: {x: 0, y: 0, z: 0}
+  m_Center: {x: 0, y: 0.5, z: 0}
 --- !u!23 &1498906407
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -5785,7 +5790,7 @@ MonoBehaviour:
   _hoverColor: {r: 0.21226418, g: 0.96333444, b: 1, a: 0}
   _gameObject: {fileID: 0}
   _player: {fileID: 0}
-  _pos: {x: 0, y: 0, z: 0}
+  _pos: {x: 0, y: 0.5, z: 0}
   _basicTower: {fileID: 0}
 --- !u!65 &1543966937
 BoxCollider:
@@ -5799,7 +5804,7 @@ BoxCollider:
   m_Enabled: 1
   serializedVersion: 2
   m_Size: {x: 1, y: 1, z: 1}
-  m_Center: {x: 0, y: 0, z: 0}
+  m_Center: {x: 0, y: 0.5, z: 0}
 --- !u!23 &1543966938
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -5894,7 +5899,7 @@ MonoBehaviour:
   _hoverColor: {r: 0.21226418, g: 0.96333444, b: 1, a: 0}
   _gameObject: {fileID: 0}
   _player: {fileID: 0}
-  _pos: {x: 0, y: 0, z: 0}
+  _pos: {x: 0, y: 0.5, z: 0}
   _basicTower: {fileID: 0}
 --- !u!65 &1548948441
 BoxCollider:
@@ -5908,7 +5913,7 @@ BoxCollider:
   m_Enabled: 1
   serializedVersion: 2
   m_Size: {x: 1, y: 1, z: 1}
-  m_Center: {x: 0, y: 0, z: 0}
+  m_Center: {x: 0, y: 0.5, z: 0}
 --- !u!23 &1548948442
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -6003,7 +6008,7 @@ MonoBehaviour:
   _hoverColor: {r: 0.21226418, g: 0.96333444, b: 1, a: 0}
   _gameObject: {fileID: 0}
   _player: {fileID: 0}
-  _pos: {x: 0, y: 0, z: 0}
+  _pos: {x: 0, y: 0.5, z: 0}
   _basicTower: {fileID: 0}
 --- !u!65 &1555359062
 BoxCollider:
@@ -6017,7 +6022,7 @@ BoxCollider:
   m_Enabled: 1
   serializedVersion: 2
   m_Size: {x: 1, y: 1, z: 1}
-  m_Center: {x: 0, y: 0, z: 0}
+  m_Center: {x: 0, y: 0.5, z: 0}
 --- !u!23 &1555359063
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -6112,7 +6117,7 @@ MonoBehaviour:
   _hoverColor: {r: 0.21226418, g: 0.96333444, b: 1, a: 0}
   _gameObject: {fileID: 0}
   _player: {fileID: 0}
-  _pos: {x: 0, y: 0, z: 0}
+  _pos: {x: 0, y: 0.5, z: 0}
   _basicTower: {fileID: 0}
 --- !u!65 &1558101592
 BoxCollider:
@@ -6126,7 +6131,7 @@ BoxCollider:
   m_Enabled: 1
   serializedVersion: 2
   m_Size: {x: 1, y: 1, z: 1}
-  m_Center: {x: 0, y: 0, z: 0}
+  m_Center: {x: 0, y: 0.5, z: 0}
 --- !u!23 &1558101593
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -6221,7 +6226,7 @@ MonoBehaviour:
   _hoverColor: {r: 0.21226418, g: 0.96333444, b: 1, a: 0}
   _gameObject: {fileID: 0}
   _player: {fileID: 0}
-  _pos: {x: 0, y: 0, z: 0}
+  _pos: {x: 0, y: 0.5, z: 0}
   _basicTower: {fileID: 0}
 --- !u!65 &1566828675
 BoxCollider:
@@ -6235,7 +6240,7 @@ BoxCollider:
   m_Enabled: 1
   serializedVersion: 2
   m_Size: {x: 1, y: 1, z: 1}
-  m_Center: {x: 0, y: 0, z: 0}
+  m_Center: {x: 0, y: 0.5, z: 0}
 --- !u!23 &1566828676
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -6330,7 +6335,7 @@ MonoBehaviour:
   _hoverColor: {r: 0.21226418, g: 0.96333444, b: 1, a: 0}
   _gameObject: {fileID: 0}
   _player: {fileID: 0}
-  _pos: {x: 0, y: 0, z: 0}
+  _pos: {x: 0, y: 0.5, z: 0}
   _basicTower: {fileID: 0}
 --- !u!65 &1585429375
 BoxCollider:
@@ -6344,7 +6349,7 @@ BoxCollider:
   m_Enabled: 1
   serializedVersion: 2
   m_Size: {x: 1, y: 1, z: 1}
-  m_Center: {x: 0, y: 0, z: 0}
+  m_Center: {x: 0, y: 0.5, z: 0}
 --- !u!23 &1585429376
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -6439,7 +6444,7 @@ MonoBehaviour:
   _hoverColor: {r: 0.21226418, g: 0.96333444, b: 1, a: 0}
   _gameObject: {fileID: 0}
   _player: {fileID: 0}
-  _pos: {x: 0, y: 0, z: 0}
+  _pos: {x: 0, y: 0.5, z: 0}
   _basicTower: {fileID: 0}
 --- !u!65 &1606846833
 BoxCollider:
@@ -6453,7 +6458,7 @@ BoxCollider:
   m_Enabled: 1
   serializedVersion: 2
   m_Size: {x: 1, y: 1, z: 1}
-  m_Center: {x: 0, y: 0, z: 0}
+  m_Center: {x: 0, y: 0.5, z: 0}
 --- !u!23 &1606846834
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -6548,7 +6553,7 @@ MonoBehaviour:
   _hoverColor: {r: 0.21226418, g: 0.96333444, b: 1, a: 0}
   _gameObject: {fileID: 0}
   _player: {fileID: 0}
-  _pos: {x: 0, y: 0, z: 0}
+  _pos: {x: 0, y: 0.5, z: 0}
   _basicTower: {fileID: 0}
 --- !u!65 &1635114989
 BoxCollider:
@@ -6562,7 +6567,7 @@ BoxCollider:
   m_Enabled: 1
   serializedVersion: 2
   m_Size: {x: 1, y: 1, z: 1}
-  m_Center: {x: 0, y: 0, z: 0}
+  m_Center: {x: 0, y: 0.5, z: 0}
 --- !u!23 &1635114990
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -6657,7 +6662,7 @@ MonoBehaviour:
   _hoverColor: {r: 0.21226418, g: 0.96333444, b: 1, a: 0}
   _gameObject: {fileID: 0}
   _player: {fileID: 0}
-  _pos: {x: 0, y: 0, z: 0}
+  _pos: {x: 0, y: 0.5, z: 0}
   _basicTower: {fileID: 0}
 --- !u!65 &1662549996
 BoxCollider:
@@ -6671,7 +6676,7 @@ BoxCollider:
   m_Enabled: 1
   serializedVersion: 2
   m_Size: {x: 1, y: 1, z: 1}
-  m_Center: {x: 0, y: 0, z: 0}
+  m_Center: {x: 0, y: 0.5, z: 0}
 --- !u!23 &1662549997
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -6766,7 +6771,7 @@ MonoBehaviour:
   _hoverColor: {r: 0.21226418, g: 0.96333444, b: 1, a: 0}
   _gameObject: {fileID: 0}
   _player: {fileID: 0}
-  _pos: {x: 0, y: 0, z: 0}
+  _pos: {x: 0, y: 0.5, z: 0}
   _basicTower: {fileID: 0}
 --- !u!65 &1712011692
 BoxCollider:
@@ -6780,7 +6785,7 @@ BoxCollider:
   m_Enabled: 1
   serializedVersion: 2
   m_Size: {x: 1, y: 1, z: 1}
-  m_Center: {x: 0, y: 0, z: 0}
+  m_Center: {x: 0, y: 0.5, z: 0}
 --- !u!23 &1712011693
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -6875,7 +6880,7 @@ MonoBehaviour:
   _hoverColor: {r: 0.21226418, g: 0.96333444, b: 1, a: 0}
   _gameObject: {fileID: 0}
   _player: {fileID: 0}
-  _pos: {x: 0, y: 0, z: 0}
+  _pos: {x: 0, y: 0.5, z: 0}
   _basicTower: {fileID: 0}
 --- !u!65 &1727495007
 BoxCollider:
@@ -6889,7 +6894,7 @@ BoxCollider:
   m_Enabled: 1
   serializedVersion: 2
   m_Size: {x: 1, y: 1, z: 1}
-  m_Center: {x: 0, y: 0, z: 0}
+  m_Center: {x: 0, y: 0.5, z: 0}
 --- !u!23 &1727495008
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -6984,7 +6989,7 @@ MonoBehaviour:
   _hoverColor: {r: 0.21226418, g: 0.96333444, b: 1, a: 0}
   _gameObject: {fileID: 0}
   _player: {fileID: 0}
-  _pos: {x: 0, y: 0, z: 0}
+  _pos: {x: 0, y: 0.5, z: 0}
   _basicTower: {fileID: 0}
 --- !u!65 &1746500085
 BoxCollider:
@@ -6998,7 +7003,7 @@ BoxCollider:
   m_Enabled: 1
   serializedVersion: 2
   m_Size: {x: 1, y: 1, z: 1}
-  m_Center: {x: 0, y: 0, z: 0}
+  m_Center: {x: 0, y: 0.5, z: 0}
 --- !u!23 &1746500086
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -7078,7 +7083,7 @@ MonoBehaviour:
   numberOfWaves: 5
   enemiesPerWave: 1
   secondBetweenWave: 5
-  secondsStartDelay: 30
+  secondsStartDelay: 10
   pathId: 0
   _uiManager: {fileID: 0}
   _activeEnemies: []
@@ -7145,7 +7150,7 @@ MonoBehaviour:
   _hoverColor: {r: 0.21226418, g: 0.96333444, b: 1, a: 0}
   _gameObject: {fileID: 0}
   _player: {fileID: 0}
-  _pos: {x: 0, y: 0, z: 0}
+  _pos: {x: 0, y: 0.5, z: 0}
   _basicTower: {fileID: 0}
 --- !u!65 &1756495811
 BoxCollider:
@@ -7159,7 +7164,7 @@ BoxCollider:
   m_Enabled: 1
   serializedVersion: 2
   m_Size: {x: 1, y: 1, z: 1}
-  m_Center: {x: 0, y: 0, z: 0}
+  m_Center: {x: 0, y: 0.5, z: 0}
 --- !u!23 &1756495812
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -7254,7 +7259,7 @@ MonoBehaviour:
   _hoverColor: {r: 0.21226418, g: 0.96333444, b: 1, a: 0}
   _gameObject: {fileID: 0}
   _player: {fileID: 0}
-  _pos: {x: 0, y: 0, z: 0}
+  _pos: {x: 0, y: 0.5, z: 0}
   _basicTower: {fileID: 0}
 --- !u!65 &1816007052
 BoxCollider:
@@ -7268,7 +7273,7 @@ BoxCollider:
   m_Enabled: 1
   serializedVersion: 2
   m_Size: {x: 1, y: 1, z: 1}
-  m_Center: {x: 0, y: 0, z: 0}
+  m_Center: {x: 0, y: 0.5, z: 0}
 --- !u!23 &1816007053
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -7342,7 +7347,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1868506920}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -17.5, y: 0, z: 13.57}
+  m_LocalPosition: {x: -13.24, y: 0, z: 13.57}
   m_LocalScale: {x: 4, y: 1, z: 4}
   m_Children: []
   m_Father: {fileID: 1029503556}
@@ -7363,7 +7368,7 @@ MonoBehaviour:
   _hoverColor: {r: 0.21226418, g: 0.96333444, b: 1, a: 0}
   _gameObject: {fileID: 0}
   _player: {fileID: 0}
-  _pos: {x: 0, y: 0, z: 0}
+  _pos: {x: 0, y: 0.5, z: 0}
   _basicTower: {fileID: 0}
 --- !u!65 &1868506923
 BoxCollider:
@@ -7377,7 +7382,7 @@ BoxCollider:
   m_Enabled: 1
   serializedVersion: 2
   m_Size: {x: 1, y: 1, z: 1}
-  m_Center: {x: 0, y: 0, z: 0}
+  m_Center: {x: 0, y: 0.5, z: 0}
 --- !u!23 &1868506924
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -7472,7 +7477,7 @@ MonoBehaviour:
   _hoverColor: {r: 0.21226418, g: 0.96333444, b: 1, a: 0}
   _gameObject: {fileID: 0}
   _player: {fileID: 0}
-  _pos: {x: 0, y: 0, z: 0}
+  _pos: {x: 0, y: 0.5, z: 0}
   _basicTower: {fileID: 0}
 --- !u!65 &1875428141
 BoxCollider:
@@ -7486,7 +7491,7 @@ BoxCollider:
   m_Enabled: 1
   serializedVersion: 2
   m_Size: {x: 1, y: 1, z: 1}
-  m_Center: {x: 0, y: 0, z: 0}
+  m_Center: {x: 0, y: 0.5, z: 0}
 --- !u!23 &1875428142
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -7581,7 +7586,7 @@ MonoBehaviour:
   _hoverColor: {r: 0.21226418, g: 0.96333444, b: 1, a: 0}
   _gameObject: {fileID: 0}
   _player: {fileID: 0}
-  _pos: {x: 0, y: 0, z: 0}
+  _pos: {x: 0, y: 0.5, z: 0}
   _basicTower: {fileID: 0}
 --- !u!65 &1894715298
 BoxCollider:
@@ -7595,7 +7600,7 @@ BoxCollider:
   m_Enabled: 1
   serializedVersion: 2
   m_Size: {x: 1, y: 1, z: 1}
-  m_Center: {x: 0, y: 0, z: 0}
+  m_Center: {x: 0, y: 0.5, z: 0}
 --- !u!23 &1894715299
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -7690,7 +7695,7 @@ MonoBehaviour:
   _hoverColor: {r: 0.21226418, g: 0.96333444, b: 1, a: 0}
   _gameObject: {fileID: 0}
   _player: {fileID: 0}
-  _pos: {x: 0, y: 0, z: 0}
+  _pos: {x: 0, y: 0.5, z: 0}
   _basicTower: {fileID: 0}
 --- !u!65 &1898614609
 BoxCollider:
@@ -7704,7 +7709,7 @@ BoxCollider:
   m_Enabled: 1
   serializedVersion: 2
   m_Size: {x: 1, y: 1, z: 1}
-  m_Center: {x: 0, y: 0, z: 0}
+  m_Center: {x: 0, y: 0.5, z: 0}
 --- !u!23 &1898614610
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -7892,7 +7897,7 @@ MonoBehaviour:
   _hoverColor: {r: 0.21226418, g: 0.96333444, b: 1, a: 0}
   _gameObject: {fileID: 0}
   _player: {fileID: 0}
-  _pos: {x: 0, y: 0, z: 0}
+  _pos: {x: 0, y: 0.5, z: 0}
   _basicTower: {fileID: 0}
 --- !u!65 &1945915598
 BoxCollider:
@@ -7906,7 +7911,7 @@ BoxCollider:
   m_Enabled: 1
   serializedVersion: 2
   m_Size: {x: 1, y: 1, z: 1}
-  m_Center: {x: 0, y: 0, z: 0}
+  m_Center: {x: 0, y: 0.5, z: 0}
 --- !u!23 &1945915599
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -8001,7 +8006,7 @@ MonoBehaviour:
   _hoverColor: {r: 0.21226418, g: 0.96333444, b: 1, a: 0}
   _gameObject: {fileID: 0}
   _player: {fileID: 0}
-  _pos: {x: 0, y: 0, z: 0}
+  _pos: {x: 0, y: 0.5, z: 0}
   _basicTower: {fileID: 0}
 --- !u!65 &1946589239
 BoxCollider:
@@ -8015,7 +8020,7 @@ BoxCollider:
   m_Enabled: 1
   serializedVersion: 2
   m_Size: {x: 1, y: 1, z: 1}
-  m_Center: {x: 0, y: 0, z: 0}
+  m_Center: {x: 0, y: 0.5, z: 0}
 --- !u!23 &1946589240
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -8110,7 +8115,7 @@ MonoBehaviour:
   _hoverColor: {r: 0.21226418, g: 0.96333444, b: 1, a: 0}
   _gameObject: {fileID: 0}
   _player: {fileID: 0}
-  _pos: {x: 0, y: 0, z: 0}
+  _pos: {x: 0, y: 0.5, z: 0}
   _basicTower: {fileID: 0}
 --- !u!65 &1953838393
 BoxCollider:
@@ -8124,7 +8129,7 @@ BoxCollider:
   m_Enabled: 1
   serializedVersion: 2
   m_Size: {x: 1, y: 1, z: 1}
-  m_Center: {x: 0, y: 0, z: 0}
+  m_Center: {x: 0, y: 0.5, z: 0}
 --- !u!23 &1953838394
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -8219,7 +8224,7 @@ MonoBehaviour:
   _hoverColor: {r: 0.21226418, g: 0.96333444, b: 1, a: 0}
   _gameObject: {fileID: 0}
   _player: {fileID: 0}
-  _pos: {x: 0, y: 0, z: 0}
+  _pos: {x: 0, y: 0.5, z: 0}
   _basicTower: {fileID: 0}
 --- !u!65 &1979496474
 BoxCollider:
@@ -8233,7 +8238,7 @@ BoxCollider:
   m_Enabled: 1
   serializedVersion: 2
   m_Size: {x: 1, y: 1, z: 1}
-  m_Center: {x: 0, y: 0, z: 0}
+  m_Center: {x: 0, y: 0.5, z: 0}
 --- !u!23 &1979496475
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -8328,7 +8333,7 @@ MonoBehaviour:
   _hoverColor: {r: 0.21226418, g: 0.96333444, b: 1, a: 0}
   _gameObject: {fileID: 0}
   _player: {fileID: 0}
-  _pos: {x: 0, y: 0, z: 0}
+  _pos: {x: 0, y: 0.5, z: 0}
   _basicTower: {fileID: 0}
 --- !u!65 &1999149537
 BoxCollider:
@@ -8342,7 +8347,7 @@ BoxCollider:
   m_Enabled: 1
   serializedVersion: 2
   m_Size: {x: 1, y: 1, z: 1}
-  m_Center: {x: 0, y: 0, z: 0}
+  m_Center: {x: 0, y: 0.5, z: 0}
 --- !u!23 &1999149538
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -8437,7 +8442,7 @@ MonoBehaviour:
   _hoverColor: {r: 0.21226418, g: 0.96333444, b: 1, a: 0}
   _gameObject: {fileID: 0}
   _player: {fileID: 0}
-  _pos: {x: 0, y: 0, z: 0}
+  _pos: {x: 0, y: 0.5, z: 0}
   _basicTower: {fileID: 0}
 --- !u!65 &2114827701
 BoxCollider:
@@ -8451,7 +8456,7 @@ BoxCollider:
   m_Enabled: 1
   serializedVersion: 2
   m_Size: {x: 1, y: 1, z: 1}
-  m_Center: {x: 0, y: 0, z: 0}
+  m_Center: {x: 0, y: 0.5, z: 0}
 --- !u!23 &2114827702
 MeshRenderer:
   m_ObjectHideFlags: 0

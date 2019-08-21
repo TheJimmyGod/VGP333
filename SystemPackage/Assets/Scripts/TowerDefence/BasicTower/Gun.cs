@@ -6,13 +6,12 @@ public class Gun : MonoBehaviour
 {
     public Transform BulletSpawnPoint;
     public GameObject bulletPrefab;
-    public GameObject _tower;
     private Tower _towerSet;
     public float bulletSpeed = 0.0f;
     
     void Awake()
     {
-        _towerSet = _tower.GetComponent<Tower>();
+        _towerSet = ServiceLocator.Get<Tower>();
         bulletSpeed = _towerSet._speed;
     }
 
