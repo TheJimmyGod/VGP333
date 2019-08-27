@@ -1557,9 +1557,9 @@ MonoBehaviour:
   _player: {fileID: 394014703}
   _turretPrefab: {fileID: 1875260789610222514, guid: 2c611a62b801c0d429ebe671e74ad907,
     type: 3}
-  _IceturretPrefab: {fileID: 3928622856887664662, guid: 275a2946923bed940a6953d4d984964c,
+  _IceturretPrefab: {fileID: 5437377537482870095, guid: 275a2946923bed940a6953d4d984964c,
     type: 3}
-  _FireturretPrefab: {fileID: 8494414761003778491, guid: ca5aa869d3c49cb429d16d6fc6e2efc9,
+  _FireturretPrefab: {fileID: 3130785256634545408, guid: ca5aa869d3c49cb429d16d6fc6e2efc9,
     type: 3}
 --- !u!114 &394014703
 MonoBehaviour:

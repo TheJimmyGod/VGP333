@@ -21,8 +21,43 @@ public class Enemy : MonoBehaviour, IDamageable
     public float _health;
     public int _money;
     public int _defence;
-    void Awake()
+
+    void Update()
     {
+        if(_health <= 0.0f)
+        {
+            _Killed?.Invoke();
+            return;
+        }
+        else
+        {
+            UpdateAnimation();
+            Transform desination = _path.Waypoints[_currentWaypoint];
+            _agent.SetDestination(desination.position);
+            if (Vector3.Distance(transform.position, desination.position) < 3.0f)
+            {
+                if (_currentWaypoint == 3)
+                {
+                    _uiManager.UpdatePlayerHP(_uiManager._currentHP - 10.0f);
+                    ServiceLocator.Get<GameManager>().UpdatePlayerHP();
+                    _Killed?.Invoke();
+                }
+                else
+                {
+                    _currentWaypoint++;
+                }
+            }
+        }
+    }
+
+    public void Initialize(WayPointManager.Path path, System.Action Onkilled)
+    {
+        _path = path;
+        _agent = GetComponent<NavMeshAgent>();
+        _animator.SetBool("isWalking", true);
+        _animator.SetBool("isRunning", true);
+        _Killed += Onkilled;
+
         _player = ServiceLocator.Get<Player>();
         _uiManager = ServiceLocator.Get<UIManager>();
         _dataLoader = ServiceLocator.Get<DataLoader>();
@@ -35,44 +70,9 @@ public class Enemy : MonoBehaviour, IDamageable
         _defence = System.Convert.ToInt32(_enemyData.DataDictionary["Defence"]);
     }
 
-    void Update()
-    {
-        UpdateAnimation();
-        Transform desination = _path.Waypoints[_currentWaypoint];
-        _agent.SetDestination(desination.position);
-        if(Vector3.Distance(transform.position, desination.position) < 3.0f)
-        {
-            if(_currentWaypoint == 3)
-            {
-                _uiManager.UpdatePlayerHP(_uiManager._currentHP - 10.0f);
-                Destroy(gameObject);
-                _Killed();
-            }
-            else
-            {
-                _currentWaypoint++;
-            }
-        }
-
-        if(_health <= 0.0f)
-        {
-
-            _Killed?.Invoke();
-            return;
-        }
-    }
-
-    public void Initialize(WayPointManager.Path path, System.Action Onkilled)
-    {
-        _path = path;
-        _agent = GetComponent<NavMeshAgent>();
-        _animator.SetBool("isWalking", true);
-        _Killed += Onkilled;
-    }
-
     private void UpdateAnimation()
     {
-        _animator.SetFloat("movementSpeed", _agent.velocity.magnitude);
+        _animator.SetFloat("BasicMovement", _agent.velocity.magnitude + _speed);
     }
 
     public void TakeDamage(float dmg)
@@ -82,14 +82,20 @@ public class Enemy : MonoBehaviour, IDamageable
         {
             _player._money += _money;
             ServiceLocator.Get<UIManager>().UpdateMoney(_money);
-            Destroy(gameObject);
-            _Killed();
+            ServiceLocator.Get<UIManager>().UpdatePlayerScore(5);
+            this._currentWaypoint = 0;
+            StartCoroutine("DeathAnimation");
         }
     }
 
-    void OnDestroy()
+    public IEnumerator DeathAnimation()
     {
-        _Killed = null;
-        Debug.Log("으악");
+        _animator.SetBool("isDead", true);
+        _animator.SetBool("isWalking", false);
+        _animator.SetBool("isRunning", false);
+        this._speed = 0.0f;
+        yield return new WaitForSeconds(3.0f);
+        _Killed?.Invoke();
+        yield return null;
     }
 }

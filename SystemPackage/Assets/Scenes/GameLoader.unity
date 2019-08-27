@@ -241,6 +241,7 @@ GameObject:
   - component: {fileID: 498627631}
   - component: {fileID: 498627630}
   - component: {fileID: 498627632}
+  - component: {fileID: 498627633}
   m_Layer: 0
   m_Name: GameLoader
   m_TagString: Untagged
@@ -266,6 +267,7 @@ MonoBehaviour:
     type: 3}
   gameModules:
   - {fileID: 498627632}
+  - {fileID: 498627633}
 --- !u!4 &498627631
 Transform:
   m_ObjectHideFlags: 0
@@ -297,6 +299,22 @@ MonoBehaviour:
   - {fileID: 11400000, guid: cdcafbcae3590534ebc3e50d106cb934, type: 2}
   - {fileID: 11400000, guid: 8f4ebf7a4102d214fb17545a49558174, type: 2}
   - {fileID: 11400000, guid: c12de9eef6be6d0469c3fff27b64f784, type: 2}
+--- !u!114 &498627633
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 498627629}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7df9a776cadc27240ab43e8bf47e0a29, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  objectsToPool:
+  - name: Monster
+    prefab: {fileID: 404194373275020843, guid: bb60207a6f3853e4da10b6baf4aeff6e, type: 3}
+    poolSize: 25
 --- !u!1 &679767949
 GameObject:
   m_ObjectHideFlags: 0
@@ -453,7 +471,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 963194225}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 1, z: -10}
+  m_LocalPosition: {x: 390, y: 243, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}

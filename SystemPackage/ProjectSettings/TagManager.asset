@@ -9,6 +9,7 @@ TagManager:
   - Basic
   - Ice
   - Fire
+  - ObjectPool
   layers:
   - Default
   - TransparentFX

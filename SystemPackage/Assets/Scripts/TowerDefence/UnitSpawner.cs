@@ -17,6 +17,8 @@ public class UnitSpawner : MonoBehaviour
     public List<GameObject> _activeEnemies = new List<GameObject>();
     private WayPointManager.Path _path;
     private Action OnDeath;     // TODO - Add an OnDeath action
+    private Action OnRecycle;
+    private GameObject _go;
     public void OnKilled()
     {
         Debug.Log("Active");
@@ -58,6 +60,7 @@ public class UnitSpawner : MonoBehaviour
 
     private IEnumerator BeginWaveSpawn()
     {
+        ServiceLocator.Get<GameManager>()._wave++;
         yield return new WaitForSeconds(secondsStartDelay);
         while (_currentWave < numberOfWaves)
         {
@@ -65,28 +68,57 @@ public class UnitSpawner : MonoBehaviour
             _currentWave++;
             yield return new WaitForSeconds(secondBetweenWave);
         }
-        while(_activeEnemies.Count <= 1)
+        while (_activeEnemies.Count <= 1)
         {
 
         }
-        _uiManager.SetWinText();
+        yield return new WaitForSeconds(secondsStartDelay + 10.0f);
+        ServiceLocator.Get<GameManager>()._wave++;
+        while (_currentWave < numberOfWaves)
+        {
+            SpawnWave(_currentWave);
+            _currentWave++;
+            yield return new WaitForSeconds(secondBetweenWave);
+        }
+        while (_activeEnemies.Count <= 1)
+        {
+
+        }
+        yield return new WaitForSeconds(secondsStartDelay + 10.0f);
+        ServiceLocator.Get<GameManager>()._wave++;
+        while (_currentWave < numberOfWaves)
+        {
+            SpawnWave(_currentWave);
+            _currentWave++;
+            yield return new WaitForSeconds(secondBetweenWave);
+        }
+        while (_activeEnemies.Count <= 1)
+        {
+
+        }
+        yield return new WaitForSeconds(secondsStartDelay + 10.0f);
+        ServiceLocator.Get<GameManager>()._wave++;
     }
 
     private void SpawnWave(int waveNumber)
     {
         for (int i = 0; i < enemiesPerWave; ++i)
         {
-            GameObject enemy = GameObject.Instantiate(UnitPrefeb, transform.position, transform.rotation);
+            //GameObject enemy = GameObject.Instantiate(UnitPrefeb, transform.position, transform.rotation);
+            GameObject enemy = ServiceLocator.Get<ObjectPoolManager>().GetObjectFromPool(UnitPrefeb.name);
+            enemy.transform.position = transform.position;
             enemy.SetActive(true);
-            enemy.GetComponent<Enemy>().Initialize(_path, Recycle); // TODO - pass the on killed action
+            OnRecycle = () => Recycle(enemy);
+            enemy.GetComponent<Enemy>().Initialize(_path, OnRecycle); // TODO - pass the on killed action
             _activeEnemies.Add(enemy);
         }
     }
 
-    private void Recycle(GameObject obj)
+    public void Recycle(GameObject obj)
     {
-        ServiceLocator.Get<ObjectPoolManager>().Recycle(obj);
+        ServiceLocator.Get<ObjectPoolManager>().RecycleObject(obj);
     }
+
     void OnDestroy()
     {
         OnDeath -= OnKilled;

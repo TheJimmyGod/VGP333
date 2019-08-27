@@ -11,9 +11,9 @@ GameObject:
   - component: {fileID: 6703346155228573742}
   - component: {fileID: 1179380885791867486}
   - component: {fileID: 9190130345436711108}
+  - component: {fileID: 8863189176239735699}
   - component: {fileID: 3285250467550768122}
   - component: {fileID: 5236884680118599498}
-  - component: {fileID: 4873773623940464219}
   - component: {fileID: 1555405739088818697}
   m_Layer: 0
   m_Name: IceBullet
@@ -81,6 +81,19 @@ MeshRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
+--- !u!114 &8863189176239735699
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3963498621520693112}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 73da4b7c75387f04a8e2b61b07cdb1e4, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  delay: 2
 --- !u!65 &3285250467550768122
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -107,19 +120,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   bulletDamage: 0
---- !u!114 &4873773623940464219
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 3963498621520693112}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 1ac22e8fe363c5b4285040d387c312c9, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  delay: 2
 --- !u!54 &1555405739088818697
 Rigidbody:
   m_ObjectHideFlags: 0

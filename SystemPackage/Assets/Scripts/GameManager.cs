@@ -12,8 +12,7 @@ public class GameManager : MonoBehaviour
     private int _currentBullet;
     private int _totalBullet;
     private float _currentHP = 100.0f;
-    public int requiredTowin = 0;
-    private int _wave = 0;
+    public int _wave = 0;
     public GameManager Initialize(int index)
     {
         _uiManager = ServiceLocator.Get<UIManager>();

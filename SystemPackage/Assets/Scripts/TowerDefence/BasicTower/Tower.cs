@@ -91,7 +91,7 @@ public class Tower : MonoBehaviour
         if(shotTime <= 0f)
         {
             _gun.Shoot();
-            shotTime = 1f / _attackRate; 
+            shotTime = 1.0f / _attackRate; 
         }
 
         shotTime -= Time.deltaTime;
