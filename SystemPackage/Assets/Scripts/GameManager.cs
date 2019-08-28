@@ -8,7 +8,8 @@ public class GameManager : MonoBehaviour
 {
     private UIManager _uiManager = null;
     public int _currentScore;
-    private int _sceneIndexToLoad = 0;
+    public int _requiredWin = 0;
+    public int _sceneIndexToLoad = 0;
     private int _currentBullet;
     private int _totalBullet;
     private float _currentHP = 100.0f;
@@ -28,6 +29,7 @@ public class GameManager : MonoBehaviour
     public void SetSceneIndex(int index)
     {
         _sceneIndexToLoad = index;
+        
     }
 
     public void UpdatePlayerHP()
@@ -41,6 +43,11 @@ public class GameManager : MonoBehaviour
         _uiManager.UpdatePlayerScore(_currentScore);
     }
 
+    public void UpdateRequireToWin(int delta)
+    {
+        _requiredWin += delta;
+    }
+
     public void CheckWaves()
     {
         _wave = _uiManager._waves;
@@ -48,9 +55,17 @@ public class GameManager : MonoBehaviour
 
     void CheckPlayerWinLose()
     {
-        if (_wave >= 4)
+        
+        if (_wave >= 3 && _requiredWin == 25)
         {
             _uiManager.SetWinText();
+        }
+        if (_requiredWin == 25 && _wave < 3)
+        {
+            _requiredWin = 0;
+            ServiceLocator.Get<PlayerData>().SavePlayerData(_uiManager._scoreValue, _uiManager._waves);
+            SetSceneIndex(SceneManager.GetActiveScene().buildIndex + 1);
+            SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex + 1);
         }
         if (_currentHP <= 0)
         {

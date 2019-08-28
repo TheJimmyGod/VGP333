@@ -8,11 +8,14 @@ public class UIManager : MonoBehaviour
     public Text _waveText;
     public Text _moneyText;
     public Text _score;
+    public Text _TName;
+    public Text _TDmg;
+    public Text _TCost;
     public Slider HPBar;
     public float _currentHP;
-    private int _scoreValue;
+    public int _scoreValue;
     public int _waves = 0;
-    public int _money;
+    public int _Tower;
     private const string WIN_MESSAGE = "You Win!!";
     private const string LOSE_MESSAGE = "You Lose!!";
 
@@ -30,9 +33,9 @@ public class UIManager : MonoBehaviour
         _currentHP = 100.0f;
         _scoreValue = 0;
         _waves = 0;
-        _money = 0;
         _waveText.text = "";
         _moneyText.text = "";
+        _Tower = 1;
         return this;
     }
 
@@ -60,13 +63,34 @@ public class UIManager : MonoBehaviour
 
     public void UpdateMoney(int money)
     {
-        _money += money;
-        _moneyText.text = "$ " + _money.ToString();
+        _moneyText.text = "$ " + money.ToString();
     }
 
     public void UpdateWaves(int wave)
     {
         _waves += wave;
         _waveText.text = _waves.ToString();
+    }
+
+    public void SetTower(int num)
+    {
+        switch(num)
+        {
+            case 1:
+                _TName.text = "Tower : Basic Tower";
+                _TDmg.text = "Damage : 5";
+                _TCost.text = "Cost : $5";
+                break;
+            case 2:
+                _TName.text = "Tower : Fire Tower";
+                _TDmg.text = "Damage : 25";
+                _TCost.text = "Cost : $15";
+                break;
+            case 3:
+                _TName.text = "Tower : Ice Tower";
+                _TDmg.text = "Damage : 3";
+                _TCost.text = "Cost : $10";
+                break;
+        }
     }
 }

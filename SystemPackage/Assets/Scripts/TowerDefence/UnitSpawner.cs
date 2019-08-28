@@ -60,7 +60,6 @@ public class UnitSpawner : MonoBehaviour
 
     private IEnumerator BeginWaveSpawn()
     {
-        ServiceLocator.Get<GameManager>()._wave++;
         yield return new WaitForSeconds(secondsStartDelay);
         while (_currentWave < numberOfWaves)
         {
@@ -68,36 +67,6 @@ public class UnitSpawner : MonoBehaviour
             _currentWave++;
             yield return new WaitForSeconds(secondBetweenWave);
         }
-        while (_activeEnemies.Count <= 1)
-        {
-
-        }
-        yield return new WaitForSeconds(secondsStartDelay + 10.0f);
-        ServiceLocator.Get<GameManager>()._wave++;
-        while (_currentWave < numberOfWaves)
-        {
-            SpawnWave(_currentWave);
-            _currentWave++;
-            yield return new WaitForSeconds(secondBetweenWave);
-        }
-        while (_activeEnemies.Count <= 1)
-        {
-
-        }
-        yield return new WaitForSeconds(secondsStartDelay + 10.0f);
-        ServiceLocator.Get<GameManager>()._wave++;
-        while (_currentWave < numberOfWaves)
-        {
-            SpawnWave(_currentWave);
-            _currentWave++;
-            yield return new WaitForSeconds(secondBetweenWave);
-        }
-        while (_activeEnemies.Count <= 1)
-        {
-
-        }
-        yield return new WaitForSeconds(secondsStartDelay + 10.0f);
-        ServiceLocator.Get<GameManager>()._wave++;
     }
 
     private void SpawnWave(int waveNumber)

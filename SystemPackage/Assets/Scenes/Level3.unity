@@ -894,6 +894,7 @@ GameObject:
   - component: {fileID: 305630440}
   - component: {fileID: 305630439}
   - component: {fileID: 305630438}
+  - component: {fileID: 305630441}
   m_Layer: 0
   m_Name: Player
   m_TagString: Player
@@ -949,6 +950,20 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 7
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &305630441
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 305630437}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 75e6a33b96f5bc94cafd729e7378b907, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _score: -1
+  _waves: 0
 --- !u!1 &321612014
 GameObject:
   m_ObjectHideFlags: 0
@@ -1939,6 +1954,52 @@ MeshFilter:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 542441568}
   m_Mesh: {fileID: 10202, guid: 0000000000000000e000000000000000, type: 0}
+--- !u!1 &563464630
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 563464632}
+  - component: {fileID: 563464631}
+  m_Layer: 0
+  m_Name: LevelManager
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!114 &563464631
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 563464630}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 76c37b886b33bb14e90aff5eb9c882ba, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  score: 0
+  money: 0
+  wave: 0
+--- !u!4 &563464632
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 563464630}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 8.613976, y: -6.806999, z: 12.595673}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_RootOrder: 8
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &576625179
 GameObject:
   m_ObjectHideFlags: 0
@@ -7710,7 +7771,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   UnitPrefeb: {fileID: 404194373275020843, guid: bb60207a6f3853e4da10b6baf4aeff6e,
     type: 3}
-  numberOfWaves: 5
+  numberOfWaves: 25
   enemiesPerWave: 1
   secondBetweenWave: 5
   secondsStartDelay: 10

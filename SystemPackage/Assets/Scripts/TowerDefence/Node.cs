@@ -16,6 +16,7 @@ public class Node : MonoBehaviour
 
     void Awake()
     {
+        ServiceLocator.Register<Node>(this);
         _uiManager = ServiceLocator.Get<UIManager>();
         _gameObject = GameObject.FindGameObjectWithTag("Player");
         _player = _gameObject.GetComponent<Player>();
@@ -39,7 +40,7 @@ public class Node : MonoBehaviour
                 GameObject turretToBuild = BuildManager.instance.GetTurretToBuild();
                 turret = (GameObject)Instantiate(turretToBuild, transform.position + _pos, transform.rotation);
                 _player._money -= 5;
-                _uiManager.UpdateMoney(-5);
+                _uiManager.UpdateMoney(_player._money);
             }
         }
         if (_player._money >= 10)
@@ -49,7 +50,7 @@ public class Node : MonoBehaviour
                 GameObject turretToBuild = BuildManager.instance.GetTurretToBuild();
                 turret = (GameObject)Instantiate(turretToBuild, transform.position + _pos, transform.rotation);
                 _player._money -= 10;
-                _uiManager.UpdateMoney(-10);
+                _uiManager.UpdateMoney(_player._money);
             }
         }
         if (_player._money >= 15)
@@ -59,7 +60,7 @@ public class Node : MonoBehaviour
                 GameObject turretToBuild = BuildManager.instance.GetTurretToBuild();
                 turret = (GameObject)Instantiate(turretToBuild, transform.position + _pos, transform.rotation);
                 _player._money -= 15;
-                _uiManager.UpdateMoney(-15);
+                _uiManager.UpdateMoney(_player._money);
             }
         }
 
