@@ -56,20 +56,20 @@ public class GameManager : MonoBehaviour
     void CheckPlayerWinLose()
     {
         
-        if (_wave >= 3 && _requiredWin == 25)
-        {
-            _uiManager.SetWinText();
-        }
-        if (_requiredWin == 25 && _wave < 3)
-        {
-            _requiredWin = 0;
-            ServiceLocator.Get<PlayerData>().SavePlayerData(_uiManager._scoreValue, _uiManager._waves);
-            SetSceneIndex(SceneManager.GetActiveScene().buildIndex + 1);
-            SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex + 1);
-        }
-        if (_currentHP <= 0)
-        {
-            _uiManager.SetLoseText();
-        }
+        //if (_wave >= 3 && _requiredWin == 25)
+        //{
+        //    _uiManager.SetWinText();
+        //}
+        //if (_requiredWin == 25 && _wave < 3)
+        //{
+        //    _requiredWin = 0;
+        //    ServiceLocator.Get<PlayerData>().SavePlayerData(_uiManager._scoreValue, _uiManager._waves);
+        //    SetSceneIndex(SceneManager.GetActiveScene().buildIndex + 1);
+        //    SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex + 1);
+        //}
+        //if (_currentHP <= 0)
+        //{
+        //    _uiManager.SetLoseText();
+        //}
     }
 }
