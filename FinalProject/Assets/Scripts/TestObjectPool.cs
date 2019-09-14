@@ -19,7 +19,7 @@ public class TestObjectPool : MonoBehaviour
             GameObject cube = ServiceLocator.Get<ObjectPoolManager>().GetObjectFromPool(poolToTest);
             cube.transform.position = transform.position;
             cube.SetActive(true);
-            yield return new WaitForSeconds(0.5f);
+            yield return new WaitForSeconds(5.0f);
             objectCounter++;
         }
     }

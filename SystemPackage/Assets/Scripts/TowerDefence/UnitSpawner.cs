@@ -24,7 +24,7 @@ public class UnitSpawner : MonoBehaviour
         Debug.Log("Active");
         for (int i = 0; i < _activeEnemies.Count; ++i)
         {
-            if(_activeEnemies[i] == null)
+            if (_activeEnemies[i] == null)
             {
                 _activeEnemies.Remove(_activeEnemies[i]);
             }
