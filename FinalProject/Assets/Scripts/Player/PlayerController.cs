@@ -16,9 +16,9 @@ public class PlayerController : MonoBehaviour
     public float _speed;
     public float _damage;
     public float _exp;
-    public float _jumpForce = 3.0f;
-
-    private bool _isJump;
+    public float _jumpForce = 20.0f;
+    public int _jumpCount = 0;
+    private bool _isJump = false;
     private bool _isAttack;
 
     public Animator _animator;
@@ -30,11 +30,11 @@ public class PlayerController : MonoBehaviour
         _controller = GetComponent<Rigidbody2D>();
         ServiceLocator.Register<PlayerController>(this);
         _gameManager = ServiceLocator.Get<GameManager>();
-
+        _dataLoader = ServiceLocator.Get<DataLoader>();
         _playerData = _dataLoader.GetDataSourceById(DataSourceId) as JsonDataSource;
 
         _name = System.Convert.ToString(_playerData.DataDictionary["Name"]);
-        _currHP = System.Convert.ToSingle(_playerData.DataDictionary["Health"]);
+        _maxHP = System.Convert.ToSingle(_playerData.DataDictionary["MaxHP"]);
         _speed = System.Convert.ToSingle(_playerData.DataDictionary["Speed"]);
         _damage = System.Convert.ToSingle(_playerData.DataDictionary["Damage"]);
         _exp = System.Convert.ToSingle(_playerData.DataDictionary["Exp"]);
@@ -48,23 +48,39 @@ public class PlayerController : MonoBehaviour
         _animator.SetFloat("Speed", Mathf.Abs(mHorizontal));
         Vector2 move = new Vector2(mHorizontal, 0.0f);
         _controller.AddForce(move);
-        if(Input.GetKeyDown(KeyCode.P))
+        if(!_isAttack)
         {
-            _isAttack = true;
-            _animator.SetBool("HeroAttack", true);
-        }
+            if (Input.GetKeyDown(KeyCode.P) && isGround)
+            {
+                _isAttack = true;
+                StartCoroutine("PlayAttackAnimation");
+            }
 
-        if(Input.GetKeyDown(KeyCode.Space))
-        {
-            _isJump = true;
-            _animator.SetBool("IsJump", true);
+            if (Input.GetKeyDown(KeyCode.W) && _jumpCount <= 2)
+            {
+                _isJump = true;
+                _animator.SetBool("IsJump", true);
+                _controller.velocity = Vector2.up * _jumpForce;
+                _jumpCount++;
+            }
         }
+    }
+
+    private IEnumerator PlayAttackAnimation()
+    {
+        velocity.x = 0.0f;
+        _animator.SetBool("IsAttack", true);
+        yield return new WaitForSeconds(1.2f);
+        _animator.SetBool("IsAttack", false);
+        _isAttack = false;
+        yield return null;
     }
 
     void OnCollisionStay2D()
     {
         isGround = true;
         _animator.SetBool("IsJump", false);
+        _jumpCount = 0;
     }
 
     void OnCollisionExit2D()

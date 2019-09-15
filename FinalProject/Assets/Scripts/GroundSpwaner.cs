@@ -70,7 +70,7 @@ public class GroundSpwaner : MonoBehaviour
             ground.transform.position = transform.position;
             ground.SetActive(true);
             OnRecycle = () => Recycle(ground);
-            ground.GetComponent<Ground>().Initialize(OnRecycle); // TODO - pass the on killed action
+            ground.GetComponent<Ground>().Initialize(OnRecycle);
             _activeGrounds.Add(ground);
         }
     }
