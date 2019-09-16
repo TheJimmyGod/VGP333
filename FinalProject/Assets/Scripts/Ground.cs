@@ -12,7 +12,7 @@ public class Ground : MonoBehaviour
     void Awake()
     {
         _gameManager = ServiceLocator.Get<GameManager>();
-        velocity.x = 2.0f;
+        velocity.x = 3.0f;
     }
 
     public void Initialize(System.Action Onkilled)
@@ -28,7 +28,7 @@ public class Ground : MonoBehaviour
         }
         else
         {
-            transform.Translate((-velocity * Time.deltaTime) * 0.75f);
+            transform.Translate((-velocity * Time.deltaTime) * 0.5f);
         }
         if(this.transform.position.y < -5)
         {

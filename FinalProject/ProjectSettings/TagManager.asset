@@ -6,6 +6,8 @@ TagManager:
   tags:
   - Ground
   - Services
+  - GSpawn
+  - ESpawn
   layers:
   - Default
   - TransparentFX
@@ -42,4 +44,10 @@ TagManager:
   m_SortingLayers:
   - name: Default
     uniqueID: 0
+    locked: 0
+  - name: BackGround
+    uniqueID: 3822287379
+    locked: 0
+  - name: Objects
+    uniqueID: 1393330055
     locked: 0

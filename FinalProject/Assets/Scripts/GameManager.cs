@@ -6,6 +6,8 @@ using UnityEngine.UI;
 
 public class GameManager : MonoBehaviour
 {
+
+
     private UIManager _uiManager = null;
     public int _currentScore;
     public int _requiredWin = 0;
@@ -14,6 +16,7 @@ public class GameManager : MonoBehaviour
     private int _totalBullet;
     private float _currentHP = 100.0f;
     public int _wave = 0;
+
     public GameManager Initialize(int index)
     {
         _uiManager = ServiceLocator.Get<UIManager>();
@@ -24,6 +27,7 @@ public class GameManager : MonoBehaviour
     void Update()
     {
         CheckPlayerWinLose();
+        SetSceneIndex(SceneManager.GetActiveScene().buildIndex);
     }
 
     public void SetSceneIndex(int index)

@@ -15,23 +15,10 @@ public class GroundSpwaner : MonoBehaviour
     private Action OnDeath;
     private Action OnRecycle;
     private GameObject _go;
-    public void OnKilled()
-    {
-        Debug.Log("Active");
-        for (int i = 0; i < _activeGrounds.Count; ++i)
-        {
-            if (_activeGrounds[i] == null)
-            {
-                _activeGrounds.Remove(_activeGrounds[i]);
-            }
-        }
-
-    }
 
 
     private void Awake()
     {
-        OnDeath += OnKilled;
         if (UnitPrefeb == null)
         {
             Debug.LogError("UnitSpawner disabled: Unit Prefab is NULL");
@@ -83,5 +70,10 @@ public class GroundSpwaner : MonoBehaviour
     void OnDestroy()
     {
         OnDeath -= OnKilled;
+    }
+
+    public void OnKilled()
+    {
+        Destroy(gameObject);
     }
 }

@@ -296,6 +296,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   DataSources:
   - {fileID: 11400000, guid: 4c65f92ac826d1c4daff744aa69f0085, type: 2}
+  - {fileID: 11400000, guid: e4c3ca8ed05b11b4e82ce417e6bc2b17, type: 2}
 --- !u!114 &498627633
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -312,6 +313,9 @@ MonoBehaviour:
   - name: Ground
     prefab: {fileID: 4663749321629933588, guid: 3f7392b922229c44ab22d8d8b087c1b6,
       type: 3}
+    poolSize: 25
+  - name: Enemy
+    prefab: {fileID: 53141685133821047, guid: 67c07a09e59d7bc468d8e05a6def71a1, type: 3}
     poolSize: 25
 --- !u!1 &679767949
 GameObject:

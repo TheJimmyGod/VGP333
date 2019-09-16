@@ -66,6 +66,7 @@
     <Compile Include="Assets\Scripts\Camera.cs" />
     <Compile Include="Assets\Scripts\DataLoader.cs" />
     <Compile Include="Assets\Scripts\DelayedDestroy.cs" />
+    <Compile Include="Assets\Scripts\Enemy\Enemy.cs" />
     <Compile Include="Assets\Scripts\GameLoader.cs" />
     <Compile Include="Assets\Scripts\GameManager.cs" />
     <Compile Include="Assets\Scripts\Gizmo\GizmoDrawer.cs" />
@@ -83,6 +84,8 @@
     <Compile Include="Assets\Scripts\Player\PlayerController.cs" />
     <Compile Include="Assets\Scripts\Player\PlayerData.cs" />
     <Compile Include="Assets\Scripts\ServiceLocator.cs" />
+    <Compile Include="Assets\Scripts\Spwaner.cs" />
+    <Compile Include="Assets\Scripts\SpwanManager.cs" />
     <Compile Include="Assets\Scripts\TestObjectPool.cs" />
     <Compile Include="Assets\Scripts\UIManager.cs" />
     <Reference Include="Unity.Timeline.Editor">

@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class PlayerController : MonoBehaviour
+public class PlayerController : MonoBehaviour, IDamageable
 {
     public string DataSourceId = "YeonData";
     public bool isGround;
@@ -18,8 +18,9 @@ public class PlayerController : MonoBehaviour
     public float _exp;
     public float _jumpForce = 20.0f;
     public int _jumpCount = 0;
-    private bool _isJump = false;
+    public bool _isJump = false;
     private bool _isAttack;
+    public bool _isdead = false;
 
     public Animator _animator;
     private GameManager _gameManager;
@@ -91,5 +92,10 @@ public class PlayerController : MonoBehaviour
     void FixedUpdate()
     {
         _isJump = false;
+    }
+
+    public void TakeDamage(float dmg)
+    {
+        throw new System.NotImplementedException();
     }
 }

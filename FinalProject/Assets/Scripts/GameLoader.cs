@@ -94,7 +94,6 @@ public class GameLoader : AsyncLoader
         GameObject gameManagerGO = new GameObject("GameManager");
         gameManagerGO.transform.SetParent(systemsParent);
         var gameManagerComp = gameManagerGO.AddComponent<GameManager>();
-        gameManagerComp = gameManagerGO.AddComponent<GameManager>();
         ServiceLocator.Register<GameManager>(gameManagerComp.Initialize(_sceneIndex));
 
         for (int i = 0; i < 8; i++)
