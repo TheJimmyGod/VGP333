@@ -19,15 +19,17 @@ public class PlayerController : MonoBehaviour, IDamageable
     public float _jumpForce = 20.0f;
     public int _jumpCount = 0;
     public bool _isJump = false;
-    private bool _isAttack;
+    public bool _isAttack = false;
     public bool _isdead = false;
 
     public Animator _animator;
+    public GameObject _GameObj;
     private GameManager _gameManager;
     private DataLoader _dataLoader;
     private JsonDataSource _playerData;
     private void Awake()
     {
+        _GameObj = GameObject.FindGameObjectWithTag("Player");
         _controller = GetComponent<Rigidbody2D>();
         ServiceLocator.Register<PlayerController>(this);
         _gameManager = ServiceLocator.Get<GameManager>();
@@ -40,6 +42,7 @@ public class PlayerController : MonoBehaviour, IDamageable
         _damage = System.Convert.ToSingle(_playerData.DataDictionary["Damage"]);
         _exp = System.Convert.ToSingle(_playerData.DataDictionary["Exp"]);
         _currHP = _maxHP;
+        _gameManager.UpdatePlayerHP(0);
     }
 
     void Update()
@@ -51,12 +54,6 @@ public class PlayerController : MonoBehaviour, IDamageable
         _controller.AddForce(move);
         if(!_isAttack)
         {
-            if (Input.GetKeyDown(KeyCode.P) && isGround)
-            {
-                _isAttack = true;
-                StartCoroutine("PlayAttackAnimation");
-            }
-
             if (Input.GetKeyDown(KeyCode.W) && _jumpCount <= 2)
             {
                 _isJump = true;
@@ -66,17 +63,6 @@ public class PlayerController : MonoBehaviour, IDamageable
             }
         }
     }
-
-    private IEnumerator PlayAttackAnimation()
-    {
-        velocity.x = 0.0f;
-        _animator.SetBool("IsAttack", true);
-        yield return new WaitForSeconds(1.2f);
-        _animator.SetBool("IsAttack", false);
-        _isAttack = false;
-        yield return null;
-    }
-
     void OnCollisionStay2D()
     {
         isGround = true;
@@ -96,6 +82,14 @@ public class PlayerController : MonoBehaviour, IDamageable
 
     public void TakeDamage(float dmg)
     {
-        throw new System.NotImplementedException();
+        Debug.Log("Noooo");
+        _currHP -= dmg;
+        _gameManager.UpdatePlayerHP(dmg);
+        if(_currHP <= 0)
+        {
+            _gameManager.SetState(GameManager.GamePlay.GameOver);
+            Destroy(_GameObj);
+            _gameManager.StartCoroutine("GameRestart");
+        }
     }
 }

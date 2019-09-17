@@ -31,5 +31,6 @@ public class LevelManager : MonoBehaviour
             GameObject _character = GameObject.Instantiate(_prefeb);
             _character.transform.position = this.transform.position;
         }
+        
     }
 }

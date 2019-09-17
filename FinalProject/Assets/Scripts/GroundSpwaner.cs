@@ -42,6 +42,10 @@ public class GroundSpwaner : MonoBehaviour
         yield return new WaitForSeconds(secondsStartDelay);
         while (_currentWave < numberOfWaves)
         {
+            if(_currentWave == 49)
+            {
+                _currentWave = 0;
+            }
             SpawnWave(_currentWave);
             _currentWave++;
             yield return new WaitForSeconds(secondBetweenWave);

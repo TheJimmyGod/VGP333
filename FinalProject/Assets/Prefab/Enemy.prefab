@@ -15,7 +15,7 @@ GameObject:
   - component: {fileID: 350815214475543112}
   - component: {fileID: 8274389217760888928}
   - component: {fileID: 4965995018442837622}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Enemy
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -31,8 +31,9 @@ Transform:
   m_GameObject: {fileID: 53141685133821047}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: -0.792, y: -0.35, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_Children: []
+  m_LocalScale: {x: 2, y: 2, z: 1}
+  m_Children:
+  - {fileID: 2510442125285931523}
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -150,7 +151,13 @@ MonoBehaviour:
   _speed: 0
   _damage: 0
   _exp: 0
-  _animator: {fileID: 0}
+  _startDazedTime: 0.5
+  _startTimeAttack: 4
+  BulletSpawnPoint: {fileID: 2510442125285931523}
+  bulletPrefab: {fileID: 6135319063101678804, guid: ac6468ca339e92a46a37e1bb6754d066,
+    type: 3}
+  bulletSpeed: 5
+  _animator: {fileID: 8274389217760888928}
   velocity: {x: 0, y: 0}
   pos: {x: 0, y: 0}
   _hero: {fileID: 0}
@@ -188,3 +195,33 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   delay: 20
   shouldRecycle: 1
+--- !u!1 &3953861574075037606
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 2510442125285931523}
+  m_Layer: 0
+  m_Name: Shoot
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &2510442125285931523
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3953861574075037606}
+  m_LocalRotation: {x: 0, y: 0, z: 0.7071068, w: 0.7071068}
+  m_LocalPosition: {x: -0.354, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 53141685133821035}
+  m_RootOrder: 0
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 90}

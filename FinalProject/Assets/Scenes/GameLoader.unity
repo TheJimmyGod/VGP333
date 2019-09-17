@@ -263,7 +263,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   sceneIndexToLoad: 1
   loadingScreen: {fileID: 1289506453}
-  UIManagerPrefab: {fileID: 8927176102280537520, guid: b3228e2bd38009943a9a2aa15a90c32d,
+  UIManagerPrefab: {fileID: 935853381166790863, guid: 165d9458a73e09144855084cd34dae34,
     type: 3}
   gameModules:
   - {fileID: 498627632}
@@ -297,6 +297,7 @@ MonoBehaviour:
   DataSources:
   - {fileID: 11400000, guid: 4c65f92ac826d1c4daff744aa69f0085, type: 2}
   - {fileID: 11400000, guid: e4c3ca8ed05b11b4e82ce417e6bc2b17, type: 2}
+  - {fileID: 11400000, guid: 51af051297d8ccc4db2f8777cb398480, type: 2}
 --- !u!114 &498627633
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -317,6 +318,10 @@ MonoBehaviour:
   - name: Enemy
     prefab: {fileID: 53141685133821047, guid: 67c07a09e59d7bc468d8e05a6def71a1, type: 3}
     poolSize: 25
+  - name: Boss
+    prefab: {fileID: 4273771468629766645, guid: 6eda805440eb1934084616ca9b7e1332,
+      type: 3}
+    poolSize: 1
 --- !u!1 &679767949
 GameObject:
   m_ObjectHideFlags: 0

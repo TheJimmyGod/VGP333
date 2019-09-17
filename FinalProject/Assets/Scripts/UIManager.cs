@@ -5,17 +5,15 @@ using UnityEngine.UI;
 public class UIManager : MonoBehaviour
 {
     public Text winloseText;
-    public Text _waveText;
-    public Text _moneyText;
+    public Text _levelText;
+    public Text _expText;
     public Text _score;
-    public Text _TName;
-    public Text _TDmg;
-    public Text _TCost;
     public Slider HPBar;
     public float _currentHP;
     public int _scoreValue;
-    public int _waves = 0;
-    public int _Tower;
+    public int _exp = 0;
+    public int _level = 1;
+    public GameManager _GO;
     private const string WIN_MESSAGE = "You Win!!";
     private const string LOSE_MESSAGE = "You Lose!!";
 
@@ -27,15 +25,17 @@ public class UIManager : MonoBehaviour
 
     public UIManager Init()
     {
+        _GO = ServiceLocator.Get<GameManager>();
         winloseText.text = "";
         _score.text = "";
-        HPBar.value = 100.0f;
-        _currentHP = 100.0f;
+        HPBar.value = 0.0f;
+        _currentHP = 0.0f;
         _scoreValue = 0;
-        _waves = 0;
-        _waveText.text = "";
-        _moneyText.text = "";
-        _Tower = 1;
+        _exp = 0;
+        _level = 1;
+        _levelText.text = "0";
+        _expText.text = "EXP ";
+
         return this;
     }
 
@@ -61,36 +61,26 @@ public class UIManager : MonoBehaviour
         _currentHP = _current;
     }
 
-    public void UpdateMoney(int money)
+    public void UpdateEXP(float exp)
     {
-        _moneyText.text = "$ " + money.ToString();
+        _expText.text = "EXP " + exp.ToString();
     }
 
-    public void UpdateWaves(int wave)
+    public void UpdateLevel()
     {
-        _waves += wave;
-        _waveText.text = _waves.ToString();
+        _levelText.text = _level.ToString();
     }
 
-    public void SetTower(int num)
+    public void Reset()
     {
-        switch(num)
-        {
-            case 1:
-                _TName.text = "Tower : Basic Tower";
-                _TDmg.text = "Damage : 5";
-                _TCost.text = "Cost : $5";
-                break;
-            case 2:
-                _TName.text = "Tower : Fire Tower";
-                _TDmg.text = "Damage : 25";
-                _TCost.text = "Cost : $15";
-                break;
-            case 3:
-                _TName.text = "Tower : Ice Tower";
-                _TDmg.text = "Damage : 3";
-                _TCost.text = "Cost : $10";
-                break;
-        }
+        winloseText.text = "";
+        _score.text = "";
+        HPBar.value = 0.0f;
+        _currentHP = 0.0f;
+        _scoreValue = 0;
+        _exp = 0;
+        _level = 1;
+        _levelText.text = "0";
+        _expText.text = "EXP ";
     }
 }

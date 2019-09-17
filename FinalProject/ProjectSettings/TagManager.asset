@@ -6,8 +6,10 @@ TagManager:
   tags:
   - Ground
   - Services
-  - GSpawn
+  - Enemy
   - ESpawn
+  - GSpawn
+  - Bullet
   layers:
   - Default
   - TransparentFX
@@ -17,8 +19,8 @@ TagManager:
   - UI
   - 
   - 
-  - 
-  - 
+  - Enemy
+  - Player
   - 
   - 
   - 

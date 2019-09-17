@@ -20,7 +20,6 @@ public class Spwaner : MonoBehaviour
     private void Awake()
     {
         _uiManager = ServiceLocator.Get<UIManager>();
-        _uiManager.UpdateWaves(1);
         if (UnitPrefeb == null)
         {
             Debug.LogError("UnitSpawner disabled: Unit Prefab is NULL");
@@ -53,7 +52,7 @@ public class Spwaner : MonoBehaviour
     {
         foreach (GameObject objects in _activeEnemies)
         {
-            if(objects.activeSelf == false)
+            if(objects == null)
             {
                 _activeEnemies.Remove(objects);
             }

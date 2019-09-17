@@ -30,7 +30,7 @@ public class Ground : MonoBehaviour
         {
             transform.Translate((-velocity * Time.deltaTime) * 0.5f);
         }
-        if(this.transform.position.y < -5)
+        if(this.transform.position.y < -10.0f)
         {
             _Killed?.Invoke();
         }
