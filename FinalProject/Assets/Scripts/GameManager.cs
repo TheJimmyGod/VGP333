@@ -86,7 +86,6 @@ public class GameManager : MonoBehaviour
 
     public void UpdatePlayerHP(float dmg)
     {
-        _currentHP = ServiceLocator.Get<PlayerController>()._currHP;
         _currentHP -= dmg;
         _uiManager.HPBar.value = _currentHP;
     }

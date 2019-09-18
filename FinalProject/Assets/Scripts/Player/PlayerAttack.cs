@@ -27,7 +27,7 @@ public class PlayerAttack : MonoBehaviour
         {
             player = ServiceLocator.Get<PlayerController>();
         }
-        if (Input.GetKey(KeyCode.P) && player.isGround && !player._isAttack)
+        if (Input.GetKeyDown(KeyCode.Mouse0) && player.isGround && !player._isAttack)
         {
             _audioSrc.Play();
             player._isAttack = true;

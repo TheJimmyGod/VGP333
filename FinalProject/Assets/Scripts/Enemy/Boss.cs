@@ -16,7 +16,7 @@ public class Boss : MonoBehaviour, IDamageable
     private float _dazedTime;
 
     private float _timeAttack;
-    public float _startTimeAttack = 1.0f;
+    public float _startTimeAttack = 3.0f;
 
     public Transform _attackPos;
     public LayerMask _layer_Player;
@@ -26,6 +26,7 @@ public class Boss : MonoBehaviour, IDamageable
     private GameManager _gameManager;
     private DataLoader _dataLoader;
     private JsonDataSource _playerData;
+    public GameObject _bulletPrefab;
 
     public Vector2 velocity;
     public Vector2 pos;
@@ -68,7 +69,7 @@ public class Boss : MonoBehaviour, IDamageable
 
             if (_dazedTime <= 0)
             {
-                velocity.x = 1.1f;
+                velocity.x = 3.0f;
             }
             else
             {
@@ -86,6 +87,7 @@ public class Boss : MonoBehaviour, IDamageable
             _animator.SetFloat("Speed", Mathf.Abs(_speed));
             if (_timeAttack <= 0)
             {
+                _speed = 0.0f;
                 if (Mathf.Abs(_hero.transform.position.x - transform.position.x) < 3f)
                 {
                     StartCoroutine("PlayAttack");
@@ -107,15 +109,22 @@ public class Boss : MonoBehaviour, IDamageable
 
     private IEnumerator PlayAttack()
     {
-        yield return new WaitForSeconds(0.5f);
-        rb.velocity = Vector2.up * 10.0f;
+        yield return new WaitForSeconds(1.0f);
+        rb.velocity = Vector2.up * 3.0f;
         _audioSource.Play();
         Collider2D _meleeAttack = Physics2D.OverlapBox(_attackPos.position, new Vector2(_range.x, _range.y), 0, _layer_Player);
         if (_hero && _meleeAttack)
         {
             _meleeAttack.GetComponent<PlayerController>().TakeDamage(_damage);
-            _meleeAttack.GetComponent<PlayerController>().transform.Translate(-Vector2.right * 10.0f);
+            float KnockBack = 3.0f;
+            
+            while (KnockBack < 0)
+            {
+                _meleeAttack.GetComponent<PlayerController>().transform.Translate(-Vector2.right * KnockBack);
+                KnockBack /= 2.0f;
+            }
         }
+        _speed = 1.0f;
     }
 
 

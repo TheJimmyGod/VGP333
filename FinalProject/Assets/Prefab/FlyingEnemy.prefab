@@ -184,7 +184,7 @@ MonoBehaviour:
   _audioSource: {fileID: -6349404327796752240}
   _startTimeAttack: 4
   BulletSpawnPoint: {fileID: 8076739358073196391}
-  bulletPrefab: {fileID: 6135319063101678804, guid: ac6468ca339e92a46a37e1bb6754d066,
+  bulletPrefab: {fileID: 6135319063101678804, guid: a91200d3f2138af4db7029e594c1cbce,
     type: 3}
   bulletSpeed: 2
   velocity: {x: 0, y: 0}

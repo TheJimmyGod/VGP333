@@ -55,7 +55,7 @@ public class PlayerController : MonoBehaviour, IDamageable
         _controller.AddForce(move);
         if(!_isAttack)
         {
-            if (Input.GetKeyDown(KeyCode.W) && _jumpCount <= 2)
+            if (Input.GetKeyDown(KeyCode.Space) && _jumpCount <= 2)
             {
                 _isJump = true;
                 _animator.SetBool("IsJump", true);
