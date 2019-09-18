@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class Ground : MonoBehaviour
+public class Ground2 : MonoBehaviour
 {
     public System.Action _Killed;
     private GameManager _gameManager;
@@ -12,7 +12,14 @@ public class Ground : MonoBehaviour
     void Awake()
     {
         _gameManager = ServiceLocator.Get<GameManager>();
-        velocity.x = 3.0f;
+        if(transform.position.x < -6)
+        {
+            velocity.x = 3.0f;
+        }
+        else if (transform.position.x > 6)
+        {
+            velocity.x = -3.0f;
+        }
     }
 
     public void Initialize(System.Action Onkilled)
@@ -20,9 +27,9 @@ public class Ground : MonoBehaviour
         _Killed += Onkilled;
     }
 
-        void Update()
+    void Update()
     {
-        if(_additionalSpeed != 0.0f)
+        if (_additionalSpeed != 0.0f)
         {
             transform.Translate((-velocity * Time.deltaTime) * _additionalSpeed);
         }
@@ -30,20 +37,20 @@ public class Ground : MonoBehaviour
         {
             transform.Translate((-velocity * Time.deltaTime) * 0.5f);
         }
-        if(this.transform.position.y < -10.0f)
+        if (this.transform.position.y < -10.0f)
         {
             _Killed?.Invoke();
         }
     }
-    private void OnTriggerEnter2D(Collider2D collision)
+    private void OnCollisionEnter2D(Collision2D collision)
     {
         if (collision.gameObject.CompareTag("Player"))
         {
-            _additionalSpeed = 2.0f;
+            _additionalSpeed = 1.5f;
         }
-        else
-        {
-            _additionalSpeed = 0.0f;
-        }
+    }
+    private void OnCollisionExit2D()
+    {
+        _additionalSpeed = 0.0f;
     }
 }

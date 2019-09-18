@@ -12,6 +12,7 @@ public class Enemy : MonoBehaviour, IDamageable
     public float _damage;
     public float _exp;
     public float _startDazedTime;
+    public AudioSource _audioSource;
     private float _dazedTime;
 
     private float _timeAttack;
@@ -29,7 +30,7 @@ public class Enemy : MonoBehaviour, IDamageable
     public Vector2 velocity;
     public Vector2 pos;
 
-    public PlayerController _hero;
+    public GameObject _hero;
     public Rigidbody2D rb;
     public System.Action _Killed;
     public void Initialize(System.Action Onkilled)
@@ -40,7 +41,7 @@ public class Enemy : MonoBehaviour, IDamageable
         _gameManager = ServiceLocator.Get<GameManager>();
         _dataLoader = ServiceLocator.Get<DataLoader>();
         _playerData = _dataLoader.GetDataSourceById(DataSourceId) as JsonDataSource;
-
+        _audioSource = GetComponent<AudioSource>();
         _name = System.Convert.ToString(_playerData.DataDictionary["Name"]);
         _maxHP = System.Convert.ToSingle(_playerData.DataDictionary["MaxHP"]);
         _speed = System.Convert.ToSingle(_playerData.DataDictionary["Speed"]);
@@ -53,16 +54,16 @@ public class Enemy : MonoBehaviour, IDamageable
         }
         _currHP = _maxHP;
         velocity.x = 1.1f;
-        _hero = ServiceLocator.Get<PlayerController>();
+        _hero = GameObject.FindGameObjectWithTag("Player");
     }
     // Update is called once per frame
     void Update()
     {
         if (_hero == null)
         {
-            _hero = ServiceLocator.Get<PlayerController>();
+            _hero = GameObject.FindGameObjectWithTag("Player");
         }
-        if (!_hero._isdead)
+        else
         {
 
             if(_dazedTime <= 0)
@@ -80,6 +81,7 @@ public class Enemy : MonoBehaviour, IDamageable
             {
                 if ((_hero.gameObject.transform.position.y - transform.position.y) >= -1)
                 {
+                    _audioSource.Play();
                     ShootBullet();
                 }
                 _timeAttack = _startTimeAttack;
@@ -107,10 +109,10 @@ public class Enemy : MonoBehaviour, IDamageable
         Debug.Log("Ouch!");
         _dazedTime = _startDazedTime;
         _currHP -= dmg;
-        transform.Translate(Vector2.right * 1.0f);
+        transform.Translate(Vector2.right * 0.4f);
         if(_currHP <= 0)
         {
-            _hero._exp += _exp;
+            ServiceLocator.Get<PlayerController>()._exp += _exp;
             _gameManager.UpdateScore(100);
             _gameManager.UpdateEXP(_exp);
             _gameManager._requiredToWin++;

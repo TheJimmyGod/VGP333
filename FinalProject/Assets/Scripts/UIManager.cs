@@ -33,7 +33,7 @@ public class UIManager : MonoBehaviour
         _scoreValue = 0;
         _exp = 0;
         _level = 1;
-        _levelText.text = "0";
+        _levelText.text = "1";
         _expText.text = "EXP ";
 
         return this;
@@ -51,7 +51,7 @@ public class UIManager : MonoBehaviour
 
     public void UpdatePlayerScore(int score)
     {
-        _scoreValue += score;
+        _scoreValue = score;
         _score.text = _scoreValue.ToString();
     }
 
@@ -75,12 +75,12 @@ public class UIManager : MonoBehaviour
     {
         winloseText.text = "";
         _score.text = "";
-        HPBar.value = 0.0f;
+        HPBar.value = 100.0f;
         _currentHP = 0.0f;
         _scoreValue = 0;
         _exp = 0;
         _level = 1;
-        _levelText.text = "0";
+        _levelText.text = "1";
         _expText.text = "EXP ";
     }
 }

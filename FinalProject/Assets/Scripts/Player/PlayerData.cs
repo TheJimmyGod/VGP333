@@ -9,6 +9,7 @@ public class PlayerData : MonoBehaviour
     public float _damage = 0.0f;
     public float _speed = 0.0f;
     public float _maxHP = 0.0f;
+    public int _level = 1;
     public string _name = string.Empty;
     public const string SCORE_KEY = "Score";
     public const string EXP_KEY = "Exp";
@@ -16,7 +17,7 @@ public class PlayerData : MonoBehaviour
     public const string SPEED_KEY = "Speed";
     public const string MAXHP_KEY = "MaxHP";
     public const string NAME_KEY = "Name";
-
+    public const string LEVEL_KEY = "Level";
 
     private void Awake()
     {
@@ -32,10 +33,11 @@ public class PlayerData : MonoBehaviour
         _maxHP = PlayerPrefs.GetFloat(MAXHP_KEY, 0.0f);
         _speed = PlayerPrefs.GetFloat(SPEED_KEY, 0.0f);
         _name = PlayerPrefs.GetString(NAME_KEY, string.Empty);
+        _level = PlayerPrefs.GetInt(LEVEL_KEY, 1);
     }
 
     public void SavePlayerData(float maxHP, float speed, float dmg, float exp,
-        string name, int score)
+        string name, int score, int level)
     {
         SaveMaxHP(maxHP);
         SaveExp(exp);
@@ -43,6 +45,7 @@ public class PlayerData : MonoBehaviour
         SaveDamage(dmg);
         SaveName(name);
         SaveSpeed(speed);
+        SaveLevel(level);
     }
 
     public void SaveName(string n)
@@ -73,5 +76,10 @@ public class PlayerData : MonoBehaviour
     public void SaveScore(int s)
     {
         PlayerPrefs.SetInt(SCORE_KEY, s);
+    }
+
+    public void SaveLevel(int l)
+    {
+        PlayerPrefs.SetInt(LEVEL_KEY, l);
     }
 }

@@ -29,13 +29,12 @@ public class Boss : MonoBehaviour, IDamageable
 
     public Vector2 velocity;
     public Vector2 pos;
-
-    public PlayerController _hero;
+    public AudioSource _audioSource;
+    public GameObject _hero;
     public Rigidbody2D rb;
     public System.Action _Killed;
-    public void Initialize(System.Action Onkilled)
+    void Awake()
     {
-        _Killed += Onkilled;
         rb = GetComponent<Rigidbody2D>();
 
         _gameManager = ServiceLocator.Get<GameManager>();
@@ -48,22 +47,23 @@ public class Boss : MonoBehaviour, IDamageable
         _damage = System.Convert.ToSingle(_playerData.DataDictionary["Damage"]);
         _exp = System.Convert.ToSingle(_playerData.DataDictionary["Exp"]);
         _animator = GetComponent<Animator>();
+        _audioSource = GetComponent<AudioSource>();
         if (ServiceLocator.Get<Boss>() == null)
         {
             ServiceLocator.Register<Boss>(this);
         }
         _currHP = _maxHP;
         velocity.x = 1.1f;
-        _hero = ServiceLocator.Get<PlayerController>();
+        _hero = GameObject.FindGameObjectWithTag("Player");
     }
     // Update is called once per frame
     void Update()
     {
         if (_hero == null)
         {
-            _hero = ServiceLocator.Get<PlayerController>();
+            _hero = GameObject.FindGameObjectWithTag("Player");
         }
-        if (!_hero._isdead)
+        else
         {
 
             if (_dazedTime <= 0)
@@ -75,18 +75,18 @@ public class Boss : MonoBehaviour, IDamageable
                 velocity.x = 0.0f;
                 _dazedTime -= Time.deltaTime;
             }
-            if(transform.position.x < -2)
+            if(transform.position.x == -5)
             {
                 transform.Translate((velocity * Time.deltaTime) * _speed);
             }
-            else if (transform.position.x > 5)
+            else if (transform.position.x == 5)
             {
                 transform.Translate((-velocity * Time.deltaTime) * _speed);
             }
             _animator.SetFloat("Speed", Mathf.Abs(_speed));
             if (_timeAttack <= 0)
             {
-                if (Mathf.Abs((_hero.pos.y - transform.position.y)) < 1f && Mathf.Abs(_hero.pos.x - transform.position.x) < 1f)
+                if (Mathf.Abs(_hero.transform.position.x - transform.position.x) < 3f)
                 {
                     StartCoroutine("PlayAttack");
                 }
@@ -99,20 +99,22 @@ public class Boss : MonoBehaviour, IDamageable
             }
             if (this.transform.position.y < -10.0f)
             {
-                _Killed?.Invoke();
+                Destroy(gameObject);
+                _gameManager._isBossKilled = true;
             }
         }
     }
 
     private IEnumerator PlayAttack()
     {
-        yield return new WaitForSeconds(2.0f);
-        rb.velocity = Vector2.up * 3.0f;
-        yield return new WaitForSeconds(1.0f);
+        yield return new WaitForSeconds(0.5f);
+        rb.velocity = Vector2.up * 10.0f;
+        _audioSource.Play();
         Collider2D _meleeAttack = Physics2D.OverlapBox(_attackPos.position, new Vector2(_range.x, _range.y), 0, _layer_Player);
-        if (!_hero._isdead && _meleeAttack)
+        if (_hero && _meleeAttack)
         {
             _meleeAttack.GetComponent<PlayerController>().TakeDamage(_damage);
+            _meleeAttack.GetComponent<PlayerController>().transform.Translate(-Vector2.right * 10.0f);
         }
     }
 
@@ -122,11 +124,11 @@ public class Boss : MonoBehaviour, IDamageable
         Debug.Log("Ouch!");
         _dazedTime = _startDazedTime;
         _currHP -= dmg;
-        rb.velocity = Vector2.up * 5.0f;
         if (_currHP <= 0)
         {
-            _hero._exp += _exp;
-            _Killed?.Invoke();
+            ServiceLocator.Get<PlayerController>()._exp += _exp;
+            Destroy(gameObject);
+            _gameManager._isBossKilled = true;
         }
     }
 

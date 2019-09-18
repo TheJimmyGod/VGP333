@@ -27,11 +27,12 @@ public class PlayerController : MonoBehaviour, IDamageable
     private GameManager _gameManager;
     private DataLoader _dataLoader;
     private JsonDataSource _playerData;
+
     private void Awake()
     {
         _GameObj = GameObject.FindGameObjectWithTag("Player");
-        _controller = GetComponent<Rigidbody2D>();
         ServiceLocator.Register<PlayerController>(this);
+        _controller = GetComponent<Rigidbody2D>();
         _gameManager = ServiceLocator.Get<GameManager>();
         _dataLoader = ServiceLocator.Get<DataLoader>();
         _playerData = _dataLoader.GetDataSourceById(DataSourceId) as JsonDataSource;
@@ -62,6 +63,11 @@ public class PlayerController : MonoBehaviour, IDamageable
                 _jumpCount++;
             }
         }
+        if (transform.position.y < -10)
+        {
+            Destroy(_GameObj);
+            _gameManager.SetPlayerLose();
+        }
     }
     void OnCollisionStay2D()
     {
@@ -89,7 +95,7 @@ public class PlayerController : MonoBehaviour, IDamageable
         {
             _gameManager.SetState(GameManager.GamePlay.GameOver);
             Destroy(_GameObj);
-            _gameManager.StartCoroutine("GameRestart");
+            _gameManager.SetPlayerLose();
         }
     }
 }

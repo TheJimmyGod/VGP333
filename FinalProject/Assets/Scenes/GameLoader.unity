@@ -298,6 +298,7 @@ MonoBehaviour:
   - {fileID: 11400000, guid: 4c65f92ac826d1c4daff744aa69f0085, type: 2}
   - {fileID: 11400000, guid: e4c3ca8ed05b11b4e82ce417e6bc2b17, type: 2}
   - {fileID: 11400000, guid: 51af051297d8ccc4db2f8777cb398480, type: 2}
+  - {fileID: 11400000, guid: 1fa093b021de5384e9ab159f2a109c5e, type: 2}
 --- !u!114 &498627633
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -314,14 +315,14 @@ MonoBehaviour:
   - name: Ground
     prefab: {fileID: 4663749321629933588, guid: 3f7392b922229c44ab22d8d8b087c1b6,
       type: 3}
-    poolSize: 25
+    poolSize: 50
   - name: Enemy
     prefab: {fileID: 53141685133821047, guid: 67c07a09e59d7bc468d8e05a6def71a1, type: 3}
-    poolSize: 25
-  - name: Boss
-    prefab: {fileID: 4273771468629766645, guid: 6eda805440eb1934084616ca9b7e1332,
+    poolSize: 30
+  - name: FlyingEnemy
+    prefab: {fileID: 4746971113041130199, guid: ee14e753a523bec4582d2fa1bac0fff2,
       type: 3}
-    poolSize: 1
+    poolSize: 30
 --- !u!1 &679767949
 GameObject:
   m_ObjectHideFlags: 0

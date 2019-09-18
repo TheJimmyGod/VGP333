@@ -15,7 +15,7 @@ public class GameManager : MonoBehaviour
     }
 
     public GamePlay _state;
-
+    private LevelManager _levelManager = null;
     private PlayerController _player = null;
     private UIManager _uiManager = null;
     public int _currentScore;
@@ -24,14 +24,16 @@ public class GameManager : MonoBehaviour
     private int _currentBullet;
     private int _totalBullet;
     private float _currentHP = 100.0f;
-    public int _level = 0;
+    public int _level = 1;
     public int _requiredToWin = 0;
     public bool _isBossKilled = false;
     public GameManager Initialize(int index)
     {
         _uiManager = ServiceLocator.Get<UIManager>();
         _player = ServiceLocator.Get<PlayerController>();
+        _levelManager = ServiceLocator.Get<LevelManager>();
         SetSceneIndex(index);
+        Checklevels();
         _state = GamePlay.MainMenu;
         return this;
     }
@@ -65,19 +67,18 @@ public class GameManager : MonoBehaviour
                 }
 
             }
-
         }
         else if(_state == GamePlay.GameOver)
         {
-            _uiManager.SetLoseText();
-            StartCoroutine("GameRestart");
+            SetPlayerLose();
+            Destroy(_player.gameObject);
         }
     }
 
     public void SetSceneIndex(int index)
     {
         _sceneIndexToLoad = index;
-        if(_sceneIndexToLoad >= 4)
+        if(_sceneIndexToLoad >= 3)
         {
             SetState(GamePlay.OnPlaying);
         }
@@ -104,7 +105,7 @@ public class GameManager : MonoBehaviour
 
     public void Checklevels()
     {
-        _level = _uiManager._level;
+        _uiManager._level = _level;
     }
 
     public void SetState(GamePlay state)
@@ -118,20 +119,28 @@ public class GameManager : MonoBehaviour
         {
             _uiManager.SetWinText();
         }
-        if (_requiredToWin == 10 && _sceneIndexToLoad == 3)
+        if (_requiredToWin >= 10 && _sceneIndexToLoad <= 3)
         {
-            _requiredToWin = 0;
-            ServiceLocator.Get<PlayerData>().SavePlayerData(_player._maxHP, _player._speed,_player._damage,_player._exp,_player._name,_currentScore);
-            SetSceneIndex(SceneManager.GetActiveScene().buildIndex + 1);
+            Debug.Log("Next ON!");
+ 
+            ServiceLocator.Get<PlayerData>().SavePlayerData(_player._maxHP, _player._speed,_player._damage,_player._exp,_player._name,_currentScore, _level);
+            SetSceneIndex(_sceneIndexToLoad + 1);
             SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex + 1);
+            if(_levelManager == null)
+            {
+                _levelManager = ServiceLocator.Get<LevelManager>();
+                _levelManager.LoadPlayerData();
+            }
+            else
+            {
+                _levelManager.LoadPlayerData();
+            }
+            _requiredToWin = 0;
         }
     }
 
-    private IEnumerator GameRestart()
+    public void SetPlayerLose()
     {
-        yield return new WaitForSeconds(3.0f);
-        SetSceneIndex(0);
-        SceneManager.LoadScene(0);
-        _uiManager.Reset();
+        _uiManager.SetLoseText();
     }
 }
